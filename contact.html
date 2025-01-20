@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Aarush Verulkar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/tab.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 12px; /* Reduced font size */
+            line-height: 1.6;
+            text-align: center;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex; /* Ensures proper layout for flex items */
+            justify-content: flex-end; /* Aligns the navbar to the right */
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 60px); /* Full height minus header */
+            gap: 20px;
+        }
+        .contact-text {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.8;
+        }
+        .contact-text a {
+            text-decoration: underline;
+            color: #007BFF;
+            font-size: 12px;
+        }
+        .icon-container {
+            display: flex;
+            gap: 20px; /* Spacing between icons */
+        }
+        .contact-icon {
+            color: #333;
+            font-size: 2em; /* Adjust icon size */
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .contact-icon:hover {
+            color: #007BFF; /* Change color on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-content">
+        <!-- Text Section -->
+        <p class="contact-text">
+            Take a look at some recent work, or feel free to get in touch.
+        </p>
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="contact-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <!-- Gmail -->
+            <a href="mailto:verulkar@usc.edu" target="_blank" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

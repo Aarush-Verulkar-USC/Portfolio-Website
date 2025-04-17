@@ -4,41 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | Aarush Verulkar</title>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;500;700&display=swap" rel="stylesheet"> -->
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <style>
-
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunrm.woff2") format("woff2"),
-                 url("fonts/cmunrm.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Roman.otf") format("opentype");
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbx.woff2") format("woff2"),
-                 url("fonts/cmunbx.woff") format("woff");
-            font-weight: bold;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Light.otf") format("opentype");
+            font-weight: 300;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunti.woff2") format("woff2"),
-                 url("fonts/cmunti.woff") format("woff");
-            font-style: italic;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Medium.otf") format("opentype");
+            font-weight: 500;
+            font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbi.woff2") format("woff2"),
-                 url("fonts/cmunbi.woff") format("woff");
-            font-weight: bold;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Oblique.otf") format("opentype");
+            font-weight: normal;
             font-style: italic;
         }
         
         body {
             margin: 0;
-            font-family: "Computer Modern", serif;
+            font-family: "Avenir", sans-serif;
             line-height: 1.8;
             font-size: 14px;
         }
@@ -64,7 +59,7 @@
         nav ul li a {
             text-decoration: none;
             color: #333;
-            font-weight: bold;
+            font-weight: 500;
         }
         section {
             padding: 20px 20px; /* Reduced vertical padding */
@@ -73,6 +68,7 @@
         }
         h1, h2, h3 {
             margin-bottom: 10px; /* Reduced bottom margin for headings */
+            font-weight: 500;
         }
         .research-item {
             margin-bottom: 20px; /* Reduced gap between research items */
@@ -82,36 +78,6 @@
             padding: 20px;
             background: #f4f4f4;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="introduction">
-        <h3>Research</h3>
-        <p>Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.</p>
-    </section>
-
-    <section id="publications">
-        <h3>Publications</h3>
-        <div>
-            <!-- Publication 1 -->
-            <h3><a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth</a></h3>
-                <p>‣ A Secured Decentralized Electronic Health Record System using Blockchain.</p>
-                <p><strong>Published in:</strong> IEEE ICBDS 2024</p>  
-        </div>
-    </section>
-    
-    <style>
         .publications-container {
             display: flex;
             flex-wrap: wrap;
@@ -151,14 +117,56 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
+            font-weight: 500;
             transition: background-color 0.3s;
         }
     
         .publication-card a:hover {
             background: #333;
         }
-    </style>    
+        
+        /* Style for publication title links */
+        #publications h3 a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        #publications h3 a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Style for strong elements */
+        strong {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="introduction">
+        <h3>Research</h3>
+        <p>Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.</p>
+    </section>
+
+    <section id="publications">
+        <h3>Publications</h3>
+        <div>
+            <!-- Publication 1 -->
+            <h3><a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth</a></h3>
+                <p>‣ A Secured Decentralized Electronic Health Record System using Blockchain.</p>
+                <p><strong>Published in:</strong> IEEE ICBDS 2024</p>  
+        </div>
+    </section>
 
     <section id="future-work">
         <h3>Future Work</h3>

@@ -4,41 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Aarush Verulkar</title>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;500;700&display=swap" rel="stylesheet"> -->
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <style>
-
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunrm.woff2") format("woff2"),
-                 url("fonts/cmunrm.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Roman.otf") format("opentype");
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbx.woff2") format("woff2"),
-                 url("fonts/cmunbx.woff") format("woff");
-            font-weight: bold;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Light.otf") format("opentype");
+            font-weight: 300;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunti.woff2") format("woff2"),
-                 url("fonts/cmunti.woff") format("woff");
-            font-style: italic;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Medium.otf") format("opentype");
+            font-weight: 500;
+            font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbi.woff2") format("woff2"),
-                 url("fonts/cmunbi.woff") format("woff");
-            font-weight: bold;
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Oblique.otf") format("opentype");
+            font-weight: normal;
             font-style: italic;
         }
         
         body {
             margin: 0;
-            font-family: "Computer Modern", serif;
+            font-family: "Avenir", sans-serif;
             font-size: 14px; /* Reduced font size */
             line-height: 1.8;
         }
@@ -64,7 +59,7 @@
         nav ul li a {
             text-decoration: none;
             color: #333;
-            font-weight: bold;
+            font-weight: 500;
         }
         section {
             padding: 20px 20px; /* Reduced vertical padding */
@@ -73,6 +68,7 @@
         }
         h2, h3 {
             margin-bottom: 20px;
+            font-weight: 500;
         }
         .projects-container {
             display: flex;
@@ -108,7 +104,7 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
+            font-weight: 500;
         }
         .project-card a:hover {
             background: #333;
@@ -117,6 +113,17 @@
             text-align: center;
             padding: 20px;
             background: #f4f4f4;
+        }
+        .project-list p {
+            margin: 10px 0;
+        }
+        .project-list a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-list a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>

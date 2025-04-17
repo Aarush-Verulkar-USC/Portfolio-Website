@@ -4,41 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarush Verulkar</title>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;500;700&display=swap" rel="stylesheet"> -->
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <style>
-
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunrm.woff2") format("woff2"),
-                 url("fonts/cmunrm.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Roman.otf") format("opentype");
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbx.woff2") format("woff2"),
-                 url("fonts/cmunbx.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Black.otf") format("opentype");
             font-weight: bold;
             font-style: normal;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunti.woff2") format("woff2"),
-                 url("fonts/cmunti.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-Oblique.otf") format("opentype");
+            font-weight: normal;
             font-style: italic;
         }
         @font-face {
-            font-family: "Computer Modern";
-            src: url("fonts/cmunbi.woff2") format("woff2"),
-                 url("fonts/cmunbi.woff") format("woff");
+            font-family: "Avenir";
+            src: url("fonts/AvenirLTStd-BlackOblique.otf") format("opentype");
             font-weight: bold;
             font-style: italic;
         }
         
         body {
             margin: 0;
-            font-family: "Computer Modern", serif;
+            font-family: "Avenir", sans-serif;
             font-size: 14px; /* Reduced font size */
             line-height: 1.8;
         }
@@ -81,6 +76,18 @@
             text-align: center;
             padding: 20px;
             background: #f4f4f4;
+        }
+        .skill-card {
+            flex: 1 1 calc(50% - 20px); /* Two cards per row */
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px); /* Lift effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
         }
     </style>
 </head>
@@ -136,21 +143,5 @@
             </div>
         </div>
     </section>
-    
-    <style>
-        .skill-card {
-            flex: 1 1 calc(50% - 20px); /* Two cards per row */
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            background: #f9f9f9;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .skill-card:hover {
-            transform: translateY(-5px); /* Lift effect */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-        }
-    </style>
-    
 </body>
 </html>

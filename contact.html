@@ -7,27 +7,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <style>
-        /* Importing Geist font */
-        @import url('https://fonts.googleapis.com/css2?family=Geist&display=swap');
+        /* Catppuccin Mocha Colors */
+        :root {
+            --ctp-base: #1e1e2e;          /* Base background */
+            --ctp-mantle: #181825;         /* Secondary background */
+            --ctp-crust: #11111b;          /* Darker background */
+            --ctp-text: #cdd6f4;           /* Main text */
+            --ctp-subtext0: #a6adc8;       /* Secondary text */
+            --ctp-subtext1: #bac2de;       /* Tertiary text */
+            --ctp-surface0: #313244;       /* Surface background */
+            --ctp-surface1: #45475a;       /* Higher surface */
+            --ctp-surface2: #585b70;       /* Highest surface */
+            --ctp-overlay0: #6c7086;       /* Overlay elements */
+            --ctp-blue: #89b4fa;           /* Blue accent */
+            --ctp-lavender: #b4befe;       /* Lavender accent */
+            --ctp-sapphire: #74c7ec;       /* Sapphire accent */
+            --ctp-sky: #89dceb;            /* Sky accent */
+            --ctp-teal: #94e2d5;           /* Teal accent */
+            --ctp-green: #a6e3a1;          /* Green accent */
+            --ctp-yellow: #f9e2af;         /* Yellow accent */
+            --ctp-peach: #fab387;          /* Peach accent */
+            --ctp-maroon: #eba0ac;         /* Maroon accent */
+            --ctp-red: #f38ba8;            /* Red accent */
+            --ctp-mauve: #cba6f7;          /* Mauve accent */
+            --ctp-pink: #f5c2e7;           /* Pink accent */
+            --ctp-flamingo: #f2cdcd;       /* Flamingo accent */
+            --ctp-rosewater: #f5e0dc;      /* Rosewater accent */
+        }
         
         body {
             margin: 0;
-            font-family: 'Geist', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif; /* Avenir with fallbacks */
             font-size: 14px;
             line-height: 1.8;
             text-align: center;
-            color: #646464;
+            color: var(--ctp-text);
+            background-color: var(--ctp-base);
         }
         
         header {
             position: sticky;
             top: 0;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: var(--ctp-mantle);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             padding: 10px 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            z-index: 100;
         }
         
         nav ul {
@@ -43,8 +70,16 @@
         
         nav ul li a {
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: var(--ctp-subtext1);
+            font-weight: normal;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.03em;
+            transition: color 0.2s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--ctp-blue);
+            text-decoration: none;
         }
         
         .contact-content {
@@ -58,14 +93,19 @@
         
         .contact-text {
             font-size: 16px;
-            color: #646464;
+            color: var(--ctp-text);
             line-height: 1.8;
         }
         
         .contact-text a {
             text-decoration: underline;
-            color: #0066cc;
+            color: var(--ctp-blue);
             font-size: 12px;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--ctp-sapphire);
         }
         
         .icon-container {
@@ -74,14 +114,14 @@
         }
         
         .contact-icon {
-            color: #333;
+            color: var(--ctp-subtext0);
             font-size: 2em; /* Adjust icon size */
             text-decoration: none;
             transition: color 0.3s, transform 0.3s;
         }
         
         .contact-icon:hover {
-            color: #0066cc; /* Change color on hover to match our blue links */
+            color: var(--ctp-peach); /* Change color on hover to peach */
             transform: scale(1.1); /* Slight zoom effect */
         }
     </style>
@@ -97,7 +137,6 @@
             </ul>
         </nav>
     </header>
-
     <div class="contact-content">
         <!-- Text Section -->
         <p class="contact-text">

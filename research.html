@@ -6,33 +6,66 @@
     <title>Research | Aarush Verulkar</title>
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <style>
-        /* Importing Geist font */
-        @import url('https://fonts.googleapis.com/css2?family=Geist&display=swap');
+        /* Catppuccin Mocha Colors */
+        :root {
+            --ctp-base: #1e1e2e;          /* Base background */
+            --ctp-mantle: #181825;         /* Secondary background */
+            --ctp-crust: #11111b;          /* Darker background */
+            --ctp-text: #cdd6f4;           /* Main text */
+            --ctp-subtext0: #a6adc8;       /* Secondary text */
+            --ctp-subtext1: #bac2de;       /* Tertiary text */
+            --ctp-surface0: #313244;       /* Surface background */
+            --ctp-surface1: #45475a;       /* Higher surface */
+            --ctp-surface2: #585b70;       /* Highest surface */
+            --ctp-overlay0: #6c7086;       /* Overlay elements */
+            --ctp-blue: #89b4fa;           /* Blue accent */
+            --ctp-lavender: #b4befe;       /* Lavender accent */
+            --ctp-sapphire: #74c7ec;       /* Sapphire accent */
+            --ctp-sky: #89dceb;            /* Sky accent */
+            --ctp-teal: #94e2d5;           /* Teal accent */
+            --ctp-green: #a6e3a1;          /* Green accent */
+            --ctp-yellow: #f9e2af;         /* Yellow accent */
+            --ctp-peach: #fab387;          /* Peach accent */
+            --ctp-maroon: #eba0ac;         /* Maroon accent */
+            --ctp-red: #f38ba8;            /* Red accent */
+            --ctp-mauve: #cba6f7;          /* Mauve accent */
+            --ctp-pink: #f5c2e7;           /* Pink accent */
+            --ctp-flamingo: #f2cdcd;       /* Flamingo accent */
+            --ctp-rosewater: #f5e0dc;      /* Rosewater accent */
+        }
         
         body {
             margin: 0;
-            font-family: 'Geist', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif; /* Avenir with fallbacks */
             font-size: 14px;
             line-height: 1.8;
-            color: #646464;
+            color: var(--ctp-text);
+            background-color: var(--ctp-base);
         }
         
         h1, h2, h3, h4, h5, h6 {
-            color: #000000;
-            font-family: 'Geist', sans-serif;
-            margin-bottom: 10px;
+            color: var(--ctp-lavender);
+            font-family: "Georgia", "Times New Roman", serif;
             font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5em;
         }
         
         header {
             position: sticky;
             top: 0;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: var(--ctp-mantle);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             padding: 10px 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            z-index: 100;
         }
         
         nav ul {
@@ -48,8 +81,16 @@
         
         nav ul li a {
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: var(--ctp-subtext1);
+            font-weight: normal;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.03em;
+            transition: color 0.2s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--ctp-blue);
+            text-decoration: none;
         }
         
         section {
@@ -70,35 +111,37 @@
     
         .publication-card {
             flex: 1 1 calc(50% - 20px);
-            border: 2px solid #333;
+            border: 2px solid var(--ctp-surface0);
             border-radius: 10px;
             padding: 20px;
-            background: #f9f9f9;
+            background: var(--ctp-mantle);
             transition: transform 0.3s, box-shadow 0.3s;
         }
     
         .publication-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            background: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(203, 166, 247, 0.2); /* Mauve shadow */
+            border-color: var(--ctp-mauve);
         }
     
         .publication-card h3 {
             margin: 0 0 10px;
             font-size: 1.1em;
+            font-weight: bold;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif; /* Keep original font for card headings */
         }
     
         .publication-card p {
             font-size: 12px;
-            color: #646464;
+            color: var(--ctp-subtext0);
         }
     
         .publication-card a {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #504d4d;
-            color: #fff;
+            background: var(--ctp-surface1);
+            color: var(--ctp-text);
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
@@ -106,21 +149,39 @@
         }
     
         .publication-card a:hover {
-            background: #333;
-        }
-        
-        #publications h3 a {
-            color: #0066cc;
+            background: var(--ctp-surface2);
             text-decoration: none;
         }
         
+        #publications h3 a {
+            color: var(--ctp-red);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 18px;
+        }
+        
         #publications h3 a:hover {
-            text-decoration: underline;
+            color: var(--ctp-flamingo);
+            text-decoration: none;
+        }
+        
+        /* Special bullet style */
+        #publications p:first-of-type {
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        #publications p:first-of-type::before {
+            content: "‣";
+            position: absolute;
+            left: 0;
+            color: var(--ctp-mauve);
         }
         
         strong {
             font-weight: 500;
-            color: #000000;
+            color: var(--ctp-peach);
         }
     </style>
 </head>
@@ -145,8 +206,8 @@
         <h3>Publications</h3>
         <div>
             <!-- Publication 1 -->
-            <h3><a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth</a></h3>
-                <p>‣ A Secured Decentralized Electronic Health Record System using Blockchain.</p>
+            <h3><a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth (Click to visit!)</a></h3>
+                <p>A Secured Decentralized Electronic Health Record System using Blockchain.</p>
                 <p><strong>Published in:</strong> IEEE ICBDS 2024</p>  
         </div>
     </section>

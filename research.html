@@ -5,216 +5,313 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | Aarush Verulkar</title>
     <link rel="icon" href="images/tab.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Catppuccin Mocha Colors */
         :root {
-            --ctp-base: #1e1e2e;          /* Base background */
-            --ctp-mantle: #181825;         /* Secondary background */
-            --ctp-crust: #11111b;          /* Darker background */
-            --ctp-text: #cdd6f4;           /* Main text */
-            --ctp-subtext0: #a6adc8;       /* Secondary text */
-            --ctp-subtext1: #bac2de;       /* Tertiary text */
-            --ctp-surface0: #313244;       /* Surface background */
-            --ctp-surface1: #45475a;       /* Higher surface */
-            --ctp-surface2: #585b70;       /* Highest surface */
-            --ctp-overlay0: #6c7086;       /* Overlay elements */
-            --ctp-blue: #89b4fa;           /* Blue accent */
-            --ctp-lavender: #b4befe;       /* Lavender accent */
-            --ctp-sapphire: #74c7ec;       /* Sapphire accent */
-            --ctp-sky: #89dceb;            /* Sky accent */
-            --ctp-teal: #94e2d5;           /* Teal accent */
-            --ctp-green: #a6e3a1;          /* Green accent */
-            --ctp-yellow: #f9e2af;         /* Yellow accent */
-            --ctp-peach: #fab387;          /* Peach accent */
-            --ctp-maroon: #eba0ac;         /* Maroon accent */
-            --ctp-red: #f38ba8;            /* Red accent */
-            --ctp-mauve: #cba6f7;          /* Mauve accent */
-            --ctp-pink: #f5c2e7;           /* Pink accent */
-            --ctp-flamingo: #f2cdcd;       /* Flamingo accent */
-            --ctp-rosewater: #f5e0dc;      /* Rosewater accent */
+            /* Color palette */
+            --navy: #0a192f;
+            --light-navy: #112240;
+            --lightest-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f4;
+            --white: #e6f1ff;
+            --green: #64ffda;
+            
+            /* Typography */
+            --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+            
+            /* Transitions */
+            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
             margin: 0;
-            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif; /* Avenir with fallbacks */
-            font-size: 14px;
-            line-height: 1.8;
-            color: var(--ctp-text);
-            background-color: var(--ctp-base);
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-mono);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--slate);
+            background-color: var(--navy);
+            -webkit-font-smoothing: antialiased;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--ctp-lavender);
-            font-family: "Georgia", "Times New Roman", serif;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            line-height: 1.2;
-        }
-        
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5em;
-        }
-        
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--ctp-mantle);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--ctp-subtext1);
-            font-weight: normal;
-            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
-            letter-spacing: 0.03em;
-            transition: color 0.2s ease;
-        }
-        
-        nav ul li a:hover {
-            color: var(--ctp-blue);
-            text-decoration: none;
+        main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 100vh;
+            padding: 0 100px 0 150px;
         }
         
         section {
-            padding: 20px 20px;
-            max-width: 900px;
-            margin: 0 auto;
+            margin: 0 0 40px 0;
+            padding: 20px 0;
+            max-width: 1000px;
         }
         
-        .research-item {
-            margin-bottom: 20px;
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 10px 0;
+            font-weight: 600;
+            color: var(--lightest-slate);
+            line-height: 1.1;
+            font-family: var(--font-mono);
         }
         
-        .publications-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        p {
+            margin: 0 0 15px 0;
         }
-    
-        .publication-card {
-            flex: 1 1 calc(50% - 20px);
-            border: 2px solid var(--ctp-surface0);
-            border-radius: 10px;
-            padding: 20px;
-            background: var(--ctp-mantle);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-    
-        .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(203, 166, 247, 0.2); /* Mauve shadow */
-            border-color: var(--ctp-mauve);
-        }
-    
-        .publication-card h3 {
-            margin: 0 0 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif; /* Keep original font for card headings */
-        }
-    
-        .publication-card p {
-            font-size: 12px;
-            color: var(--ctp-subtext0);
-        }
-    
-        .publication-card a {
+        
+        a {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: var(--ctp-surface1);
-            color: var(--ctp-text);
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-    
-        .publication-card a:hover {
-            background: var(--ctp-surface2);
-            text-decoration: none;
-        }
-        
-        #publications h3 a {
-            color: var(--ctp-red);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
-            font-size: 18px;
-        }
-        
-        #publications h3 a:hover {
-            color: var(--ctp-flamingo);
-            text-decoration: none;
-        }
-        
-        /* Special bullet style */
-        #publications p:first-of-type {
+            text-decoration-skip-ink: auto;
+            color: var(--green);
             position: relative;
-            padding-left: 15px;
+            transition: var(--transition);
         }
         
-        #publications p:first-of-type::before {
-            content: "‣";
+        a:hover, a:focus {
+            color: var(--green);
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 11;
+            width: 100%;
+            height: 70px;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            color: var(--lightest-slate);
+            font-family: var(--font-mono);
+            z-index: 12;
+            padding: 0 50px;
+            height: 70px;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .nav-link {
+            padding: 10px;
+            color: var(--lightest-slate);
+            font-size: 13px;
+            font-weight: 400;
+            transition: var(--transition);
+        }
+        
+        .nav-numbered {
+            color: var(--green);
+            font-size: 13px;
+            margin-right: 5px;
+            font-weight: 400;
+        }
+        
+        .nav-link:hover, .nav-link:focus {
+            color: var(--green);
+        }
+        
+        /* Research */
+        .research-section {
+            padding-top: 100px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 5px 0 20px;
+            font-size: clamp(20px, 5vw, 24px);
+            white-space: nowrap;
+            color: var(--lightest-slate);
+        }
+        
+        .section-number {
+            color: var(--green);
+            font-size: clamp(14px, 3vw, 16px);
+            font-weight: 400;
+            margin-right: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--lightest-navy);
+        }
+        
+        .research-intro {
+            color: var(--slate);
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .publications-section {
+            margin-bottom: 40px;
+        }
+        
+        .publication-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .publication-item::before {
+            content: ">";
             position: absolute;
             left: 0;
-            color: var(--ctp-mauve);
+            color: var(--green);
+            font-size: 14px;
+            line-height: 24px;
         }
         
-        strong {
+        .publication-title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: var(--lightest-slate);
             font-weight: 500;
-            color: var(--ctp-peach);
+        }
+        
+        .publication-title a {
+            color: var(--green);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .publication-title a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: var(--green);
+            transition: var(--transition);
+        }
+        
+        .publication-title a:hover::after {
+            width: 100%;
+        }
+        
+        .publication-description {
+            color: var(--light-slate);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .publication-meta {
+            color: var(--slate);
+            font-size: 14px;
+        }
+        
+        .publication-meta strong {
+            color: var(--light-slate);
+            font-weight: 500;
+        }
+        
+        .future-work {
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 0 50px;
+            }
+            
+            nav {
+                padding: 0 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 0 25px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-numbered">01.</span>Home</a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link"><span class="nav-numbered">02.</span>Research</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link"><span class="nav-numbered">03.</span>Projects</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-numbered">04.</span>Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="introduction">
-        <h3>Research</h3>
-        <p>Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.</p>
-    </section>
-
-    <section id="publications">
-        <h3>Publications</h3>
-        <div>
-            <!-- Publication 1 -->
-            <h3><a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth (Click to visit!)</a></h3>
-                <p>A Secured Decentralized Electronic Health Record System using Blockchain.</p>
-                <p><strong>Published in:</strong> IEEE ICBDS 2024</p>  
-        </div>
-    </section>
-
-    <section id="future-work">
-        <h3>Future Work</h3>
-        <p>Stay Tuned.</p>
-    </section>
+    <main>
+        <section class="research-section">
+            <h3 class="section-title"><span class="section-number">02.</span>Research</h3>
+            <p class="research-intro">
+                Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.
+            </p>
+            
+            <div class="publications-section">
+                <h3 class="section-title"><span class="section-number">a.</span>Publications</h3>
+                
+                <div class="publication-item">
+                    <h4 class="publication-title">
+                        <a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth</a>
+                    </h4>
+                    <p class="publication-description">
+                        A Secured Decentralized Electronic Health Record System using Blockchain.
+                    </p>
+                    <p class="publication-meta">
+                        <strong>Published in:</strong> IEEE ICBDS 2024
+                    </p>
+                </div>
+            </div>
+            
+            <div class="future-work">
+                <h3 class="section-title"><span class="section-number">b.</span>Future Work</h3>
+                <p>Stay Tuned.</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

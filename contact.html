@@ -8,7 +8,7 @@
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Color palette */
@@ -20,24 +20,24 @@
             --lightest-slate: #ccd6f4;
             --white: #e6f1ff;
             --green: #64ffda;
-            
+
             /* Typography */
-            --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
-            
+            --font-mono: 'Ubuntu Mono', monospace;
+
             /* Transitions */
             --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             margin: 0;
             width: 100%;
@@ -50,7 +50,7 @@
             background-color: var(--navy);
             -webkit-font-smoothing: antialiased;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             margin: 0 0 10px 0;
             font-weight: 500;
@@ -58,11 +58,11 @@
             line-height: 1.1;
             font-family: var(--font-mono);
         }
-        
+
         p {
             margin: 0 0 15px 0;
         }
-        
+
         a {
             display: inline-block;
             text-decoration: none;
@@ -71,12 +71,11 @@
             position: relative;
             transition: var(--transition);
         }
-        
+
         a:hover, a:focus {
             color: var(--green);
         }
-        
-        /* Navigation */
+
         header {
             position: fixed;
             top: 0;
@@ -88,7 +87,7 @@
             backdrop-filter: blur(10px);
             transition: var(--transition);
         }
-        
+
         nav {
             display: flex;
             justify-content: flex-end;
@@ -101,18 +100,18 @@
             padding: 0 50px;
             height: 70px;
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
             list-style: none;
         }
-        
+
         .nav-item {
             margin: 0 5px;
             position: relative;
         }
-        
+
         .nav-link {
             padding: 10px;
             color: var(--lightest-slate);
@@ -120,19 +119,18 @@
             font-weight: 400;
             transition: var(--transition);
         }
-        
+
         .nav-numbered {
             color: var(--green);
             font-size: 13px;
             margin-right: 5px;
             font-weight: 400;
         }
-        
+
         .nav-link:hover, .nav-link:focus {
             color: var(--green);
         }
-        
-        /* Contact */
+
         .contact-section {
             display: flex;
             flex-direction: column;
@@ -142,7 +140,7 @@
             text-align: center;
             padding: 0 20px;
         }
-        
+
         .section-title {
             display: flex;
             align-items: center;
@@ -152,14 +150,14 @@
             white-space: nowrap;
             color: var(--lightest-slate);
         }
-        
+
         .section-number {
             color: var(--green);
             font-size: clamp(14px, 3vw, 16px);
             font-weight: 400;
             margin-right: 10px;
         }
-        
+
         .contact-text {
             max-width: 800px;
             margin-bottom: 25px;
@@ -167,32 +165,31 @@
             line-height: 1.5;
             color: var(--light-slate);
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-top: 10px;
         }
-        
+
         .social-icon {
             color: var(--light-slate);
             font-size: 22px;
             transition: var(--transition);
         }
-        
+
         .social-icon:hover {
             color: var(--green);
             transform: translateY(-3px);
         }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
             nav {
                 padding: 0 25px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .social-links {
                 gap: 20px;
@@ -214,20 +211,19 @@
 
     <main>
         <section class="contact-section">
-            
             <p class="contact-text">
                 Take a look at some recent work, or feel free to get in touch.
             </p>
-            
+
             <div class="social-links">
                 <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="social-icon" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                
+
                 <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="social-icon" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                
+
                 <a href="mailto:verulkar@usc.edu" class="social-icon" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>

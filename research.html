@@ -7,7 +7,7 @@
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Color palette */
@@ -19,24 +19,24 @@
             --lightest-slate: #ccd6f4;
             --white: #e6f1ff;
             --green: #64ffda;
-            
+
             /* Typography */
-            --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
-            
+            --font-mono: 'Ubuntu Mono', monospace;
+
             /* Transitions */
             --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             margin: 0;
             width: 100%;
@@ -49,7 +49,7 @@
             background-color: var(--navy);
             -webkit-font-smoothing: antialiased;
         }
-        
+
         main {
             margin: 0 auto;
             width: 100%;
@@ -57,13 +57,13 @@
             min-height: 100vh;
             padding: 0 100px 0 150px;
         }
-        
+
         section {
             margin: 0 0 40px 0;
             padding: 20px 0;
             max-width: 1000px;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             margin: 0 0 10px 0;
             font-weight: 600;
@@ -71,11 +71,11 @@
             line-height: 1.1;
             font-family: var(--font-mono);
         }
-        
+
         p {
             margin: 0 0 15px 0;
         }
-        
+
         a {
             display: inline-block;
             text-decoration: none;
@@ -84,12 +84,11 @@
             position: relative;
             transition: var(--transition);
         }
-        
+
         a:hover, a:focus {
             color: var(--green);
         }
-        
-        /* Navigation */
+
         header {
             position: fixed;
             top: 0;
@@ -101,7 +100,7 @@
             backdrop-filter: blur(10px);
             transition: var(--transition);
         }
-        
+
         nav {
             display: flex;
             justify-content: flex-end;
@@ -114,18 +113,18 @@
             padding: 0 50px;
             height: 70px;
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
             list-style: none;
         }
-        
+
         .nav-item {
             margin: 0 5px;
             position: relative;
         }
-        
+
         .nav-link {
             padding: 10px;
             color: var(--lightest-slate);
@@ -133,24 +132,23 @@
             font-weight: 400;
             transition: var(--transition);
         }
-        
+
         .nav-numbered {
             color: var(--green);
             font-size: 13px;
             margin-right: 5px;
             font-weight: 400;
         }
-        
+
         .nav-link:hover, .nav-link:focus {
             color: var(--green);
         }
-        
-        /* Research */
+
         .research-section {
             padding-top: 100px;
             margin-bottom: 40px;
         }
-        
+
         .section-title {
             display: flex;
             align-items: center;
@@ -160,14 +158,14 @@
             white-space: nowrap;
             color: var(--lightest-slate);
         }
-        
+
         .section-number {
             color: var(--green);
             font-size: clamp(14px, 3vw, 16px);
             font-weight: 400;
             margin-right: 10px;
         }
-        
+
         .section-title::after {
             content: '';
             display: block;
@@ -177,25 +175,25 @@
             margin-left: 20px;
             background-color: var(--lightest-navy);
         }
-        
+
         .research-intro {
             color: var(--slate);
             font-size: 15px;
             line-height: 1.5;
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 800px;
         }
-        
+
         .publications-section {
             margin-bottom: 40px;
         }
-        
+
         .publication-item {
             position: relative;
             padding-left: 30px;
             margin-bottom: 25px;
         }
-        
+
         .publication-item::before {
             content: ">";
             position: absolute;
@@ -204,20 +202,20 @@
             font-size: 14px;
             line-height: 24px;
         }
-        
+
         .publication-title {
             font-size: 16px;
             margin-bottom: 6px;
             color: var(--lightest-slate);
             font-weight: 500;
         }
-        
+
         .publication-title a {
             color: var(--green);
             position: relative;
             display: inline-block;
         }
-        
+
         .publication-title a::after {
             content: '';
             display: block;
@@ -229,42 +227,41 @@
             background-color: var(--green);
             transition: var(--transition);
         }
-        
+
         .publication-title a:hover::after {
             width: 100%;
         }
-        
+
         .publication-description {
             color: var(--light-slate);
             font-size: 14px;
             margin-bottom: 8px;
         }
-        
+
         .publication-meta {
             color: var(--slate);
             font-size: 14px;
         }
-        
+
         .publication-meta strong {
             color: var(--light-slate);
             font-weight: 500;
         }
-        
+
         .future-work {
             margin-top: 40px;
         }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
             main {
                 padding: 0 50px;
             }
-            
+
             nav {
                 padding: 0 25px;
             }
         }
-        
+
         @media (max-width: 480px) {
             main {
                 padding: 0 25px;
@@ -290,10 +287,10 @@
             <p class="research-intro">
                 Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.
             </p>
-            
+
             <div class="publications-section">
                 <h3 class="section-title"><span class="section-number">a.</span>Publications</h3>
-                
+
                 <div class="publication-item">
                     <h4 class="publication-title">
                         <a href="https://ieeexplore.ieee.org/document/10837083" target="_blank">Intellihealth</a>
@@ -306,7 +303,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="future-work">
                 <h3 class="section-title"><span class="section-number">b.</span>Future Work</h3>
                 <p>Stay Tuned.</p>

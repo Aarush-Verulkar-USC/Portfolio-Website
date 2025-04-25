@@ -7,7 +7,7 @@
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Color palette */
@@ -19,24 +19,24 @@
             --lightest-slate: #ccd6f4;
             --white: #e6f1ff;
             --green: #64ffda;
-            
+
             /* Typography */
-            --font-mono: 'Geist Mono', 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
-            
+            --font-mono: 'Ubuntu Mono', monospace;
+
             /* Transitions */
             --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             margin: 0;
             width: 100%;
@@ -49,7 +49,7 @@
             background-color: var(--navy);
             -webkit-font-smoothing: antialiased;
         }
-        
+
         main {
             margin: 0 auto;
             width: 100%;
@@ -57,13 +57,13 @@
             min-height: 100vh;
             padding: 0 100px 0 150px;
         }
-        
+
         section {
             margin: 0 0 40px 0;
             padding: 20px 0;
             max-width: 1000px;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             margin: 0 0 10px 0;
             font-weight: 600;
@@ -71,11 +71,11 @@
             line-height: 1.1;
             font-family: var(--font-mono);
         }
-        
+
         p {
             margin: 0 0 15px 0;
         }
-        
+
         a {
             display: inline-block;
             text-decoration: none;
@@ -84,12 +84,11 @@
             position: relative;
             transition: var(--transition);
         }
-        
+
         a:hover, a:focus {
             color: var(--green);
         }
-        
-        /* Navigation */
+
         header {
             position: fixed;
             top: 0;
@@ -101,7 +100,7 @@
             backdrop-filter: blur(10px);
             transition: var(--transition);
         }
-        
+
         nav {
             display: flex;
             justify-content: flex-end;
@@ -114,18 +113,18 @@
             padding: 0 50px;
             height: 70px;
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
             list-style: none;
         }
-        
+
         .nav-item {
             margin: 0 5px;
             position: relative;
         }
-        
+
         .nav-link {
             padding: 10px;
             color: var(--lightest-slate);
@@ -133,24 +132,23 @@
             font-weight: 400;
             transition: var(--transition);
         }
-        
+
         .nav-numbered {
             color: var(--green);
             font-size: 13px;
             margin-right: 5px;
             font-weight: 400;
         }
-        
+
         .nav-link:hover, .nav-link:focus {
             color: var(--green);
         }
-        
-        /* Projects */
+
         .projects-section {
             padding-top: 100px;
             margin-bottom: 40px;
         }
-        
+
         .section-title {
             display: flex;
             align-items: center;
@@ -160,14 +158,14 @@
             white-space: nowrap;
             color: var(--lightest-slate);
         }
-        
+
         .section-number {
             color: var(--green);
             font-size: clamp(14px, 3vw, 16px);
             font-weight: 400;
             margin-right: 10px;
         }
-        
+
         .section-title::after {
             content: '';
             display: block;
@@ -177,7 +175,7 @@
             margin-left: 20px;
             background-color: var(--lightest-navy);
         }
-        
+
         .project-intro {
             color: var(--slate);
             font-size: 15px;
@@ -186,19 +184,19 @@
             max-width: 600px;
             font-weight: 400;
         }
-        
+
         .projects-list {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-        
+
         .project-item {
             position: relative;
             padding-left: 30px;
             margin-bottom: 10px;
         }
-        
+
         .project-item::before {
             content: ">";
             position: absolute;
@@ -207,13 +205,13 @@
             font-size: 14px;
             line-height: 24px;
         }
-        
+
         .project-link {
             font-weight: 500;
             position: relative;
             display: inline-block;
         }
-        
+
         .project-link::after {
             content: '';
             display: block;
@@ -225,29 +223,28 @@
             background-color: var(--green);
             transition: var(--transition);
         }
-        
+
         .project-link:hover::after {
             width: 100%;
         }
-        
+
         .project-description {
             color: var(--light-slate);
             font-size: 13px;
             margin-top: 5px;
             font-weight: 400;
         }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
             main {
                 padding: 0 50px;
             }
-            
+
             nav {
                 padding: 0 25px;
             }
         }
-        
+
         @media (max-width: 480px) {
             main {
                 padding: 0 25px;
@@ -273,23 +270,23 @@
             <p class="project-intro">
                 Here is a collection of some of my recent projects. Each project showcases the skills and technologies I've applied to solve real-world problems.
             </p>
-            
+
             <div class="projects-list">
                 <div class="project-item">
                     <a href="https://github.com/Aarush-Verulkar-USC/Intellihealth" class="project-link">Intellihealth</a>
                     <p class="project-description">A decentralized electronic health record system leveraging blockchain.</p>
                 </div>
-                
+
                 <div class="project-item">
                     <a href="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" class="project-link">Deep Learning Based Conveyor Belt Object Detection System</a>
                     <p class="project-description">Achieved 95% accuracy in real-time classification.</p>
                 </div>
-                
+
                 <div class="project-item">
                     <a href="https://github.com/Aarush-Verulkar-USC/Continual-Learning" class="project-link">Cross-Domain Continual Learning</a>
                     <p class="project-description">Comparative analysis of EWC, GEM, and Experience Replay.</p>
                 </div>
-                
+
                 <div class="project-item">
                     <a href="https://github.com/Aarush-Verulkar-USC/To-Do-List" class="project-link">To Do List</a>
                     <p class="project-description">A simple CRUD-based React project with theme switcher.</p>

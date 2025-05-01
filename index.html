@@ -7,21 +7,18 @@
     <link rel="icon" href="images/tab.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
         
         :root {
-            /* Color palette */
             --bg-color: #1a1a1a;
-            --bg-secondary: #222222;
-            --text-primary: #ffffff;
-            --text-secondary: #888888;
-            --accent-color: #ffffff;
-            --border-color: #333333;
+            --terminal-header: #282828;
+            --text-primary: #f8f8f2;
+            --text-secondary: #8F8F8F;
+            --accent-color: #50fa7b;
+            --accent-secondary: #bd93f9;
+            --cursor-color: #ffffff;
             
-            /* Typography */
-            --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            
-            /* Transitions */
+            --font-mono: 'Geist Mono', monospace;
             --transition: all 0.2s ease-in-out;
         }
         
@@ -31,416 +28,418 @@
             padding: 0;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            margin: 0;
-            width: 100%;
-            min-height: 100%;
-            overflow-x: hidden;
-            font-family: var(--font-sans);
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-secondary);
             background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
         
-        main {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 950px;
-            min-height: 100vh;
-            padding: 100px 20px;
-        }
-        
-        section {
-            margin: 0 0 50px 0;
-            padding: 0;
-            max-width: 100%;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0 0 20px 0;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.2;
-            font-family: var(--font-sans);
-            letter-spacing: -0.02em;
-        }
-        
-        p {
-            margin: 0 0 20px 0;
-            font-weight: 400;
-        }
-        
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--accent-color);
+        .terminal {
+            width: 90%;
+            max-width: 850px;
+            height: 90vh;
+            margin: 5vh auto;
+            background-color: var(--bg-color);
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
             position: relative;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-        
-        a:hover, a:focus {
-            opacity: 0.8;
-        }
-        
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            z-index: 11;
-            width: 100%;
-            height: 50px;
-            background-color: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(5px);
-            transition: var(--transition);
-            border-bottom: 1px solid #252525;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            max-width: 950px;
-            margin: 0 auto;
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            z-index: 12;
-            padding: 0 20px;
-            height: 50px;
-        }
-        
-        .logo {
-            font-weight: 500;
-            font-size: 14px;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: #aaaaaa;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-        
-        .nav-item {
-            margin: 0 2px;
-            position: relative;
-        }
-        
-        .nav-link {
-            padding: 8px;
-            color: var(--text-secondary);
-            font-size: 12px;
-            font-weight: 400;
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover, .nav-link:focus {
-            color: var(--accent-color);
-        }
-        
-        .about-section {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            min-height: calc(100vh - 200px);
         }
         
-        .about-section h1 {
-            margin: 0 0 10px 0;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 1.2;
+        .terminal-header {
+            height: 28px;
+            background-color: var(--terminal-header);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            position: relative;
         }
         
-        .about-section .highlight {
-            color: var(--accent-color);
-            display: inline;
+        .window-controls {
+            display: flex;
+            gap: 8px;
         }
         
-        .about-section h2 {
-            font-size: 16px;
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .control.red {
+            background-color: #ff5f56;
+        }
+        
+        .control.yellow {
+            background-color: #ffbd2e;
+        }
+        
+        .control.green {
+            background-color: #27c93f;
+        }
+        
+        .terminal-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: var(--text-secondary);
             font-weight: 400;
-            color: var(--text-secondary);
-            margin-bottom: 18px;
-            letter-spacing: 0;
         }
         
-        .about-description {
-            margin-top: 10px;
-            max-width: 500px;
+        .terminal-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            font-size: 13px;
+        }
+        
+        .terminal-content::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .prompt {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .prompt-sign {
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-weight: 500;
+        }
+        
+        .prompt-user {
+            color: var(--accent-secondary);
+            margin-right: 5px;
+        }
+        
+        .prompt-path {
             color: var(--text-secondary);
-            font-size: 14px;
+            margin-right: 8px;
+        }
+        
+        .prompt-command {
+            color: var(--text-primary);
+        }
+        
+        .response {
+            margin-left: 0;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
         
+        .response p {
+            margin-bottom: 10px;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--cursor-color);
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+            margin-top: -2px;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+        }
+        
+        .section {
+            margin-bottom: 10px;
+        }
+        
         .section-title {
-            position: relative;
-            margin: 0 0 20px;
-            font-size: 18px;
+            color: var(--accent-secondary);
+            margin-bottom: 5px;
             font-weight: 500;
-            color: var(--text-primary);
         }
         
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            margin-top: 6px;
-            background-color: var(--accent-color);
-        }
-        
-                .button-group {
+        .skills-list {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
         }
         
-        .resume-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 16px;
-            background-color: transparent;
-            border: 1px solid #555555;
-            border-radius: 50px;
-            color: var(--text-primary);
+        .skill-item {
+            background-color: rgba(240, 240, 240, 0.05);
+            border-radius: 3px;
+            padding: 3px 8px;
             font-size: 12px;
-            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        
+        .link {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-color);
+            padding-bottom: 1px;
             transition: var(--transition);
         }
         
-        .resume-link:hover {
-            background-color: #333333;
+        .link:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--text-primary);
         }
         
-        .resume-link svg {
-            width: 12px;
-            height: 12px;
-            margin-left: 6px;
+        .typing {
+            animation: typing 3.5s steps(40, end);
         }
         
-        .resume-link svg {
-            margin-left: 8px;
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
         }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 10px;
+        /* Navigation links */
+        .nav-links {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-item {
+            margin-right: 15px;
+        }
+        
+        .nav-link {
+            color: var(--accent-secondary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-secondary);
+            padding-bottom: 1px;
+            transition: var(--transition);
+            font-size: 12px;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--text-primary);
+        }
+        
+        /* Active command */
+        .active-command {
+            display: flex;
             margin-top: 20px;
         }
         
-        .skill-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            background-color: var(--bg-secondary);
-            border-radius: 4px;
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .skill-card:hover {
-            background-color: #2a2a2a;
-        }
-        
-        .skill-icon {
-            font-size: 16px;
-            color: #aaaaaa;
-            margin-bottom: 6px;
-        }
-        
-        .skill-name {
-            font-size: 11px;
-            font-weight: 400;
-            color: var(--text-primary);
-        }
-        
+        /* Media queries */
         @media (max-width: 768px) {
-            main {
-                padding: 80px 20px;
+            .terminal {
+                width: 95%;
+                height: 95vh;
+                margin: 2.5vh auto;
             }
             
-            .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-                gap: 8px;
+            .terminal-content {
+                padding: 10px;
+                font-size: 12px;
             }
             
-            .skill-card {
-                padding: 8px;
+            .terminal-header {
+                height: 24px;
             }
         }
         
         @media (max-width: 480px) {
-            .about-section h1 {
-                font-size: 20px;
+            .terminal {
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                border-radius: 0;
             }
             
-            .about-section h2 {
-                font-size: 14px;
+            .terminal-content {
+                padding: 8px;
+                font-size: 11px;
             }
             
-            .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-                gap: 6px;
+            .terminal-header {
+                height: 22px;
             }
             
-            .skill-icon {
-                font-size: 14px;
-            }
-            
-            .skill-name {
-                font-size: 10px;
+            .control {
+                width: 10px;
+                height: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="images/WEBSITE FAVICON.png" width="20" height="20">
-            </a>
-            <ul class="nav-links">
-                <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
-                <li class="nav-item"><a href="research.html" class="nav-link">research</a></li>
-                <li class="nav-item"><a href="projects.html" class="nav-link">projects</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="about" class="about-section">
-            <h1>aarush verulkar</h1>
-            <h2>computer science graduate student @ usc</h2>
-            <div class="about-description">
-                <p>welcome to my portfolio. currently seeking summer 2025 internships in software engineering and machine learning roles.</p>
-                <div class="button-group">
-                    <a href="docs/resume.pdf" class="resume-link">
-                        resume
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                        </svg>
-                    </a>
-                    <a href="skills.html" class="resume-link">
-                        skills
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                        </svg>
-                    </a>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <div class="control red"></div>
+                <div class="control yellow"></div>
+                <div class="control green"></div>
+            </div>
+            <div class="terminal-title">bash -- 80x24</div>
+        </div>
+        <div class="terminal-content">
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">whoami</span>
+            </div>
+            <div class="response">
+                <p>aarush verulkar</p>
+                <p>computer science graduate student @ usc</p>
+                <p>currently seeking summer 2025 internships</p>
+            </div>
+            
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">ls -la</span>
+            </div>
+            <div class="response">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">about</a>
+                    <a href="#skills" class="nav-link">skills</a>
+                    <a href="#resume" class="nav-link">resume</a>
+                    <a href="#projects" class="nav-link">projects</a>
+                    <a href="#contact" class="nav-link">contact</a>
                 </div>
             </div>
-        </section>
-
-        <section id="skills">
-            <h3 class="section-title">Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <div class="skill-name">Python</div>
+            
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">cat about.txt</span>
+            </div>
+            <div class="response" id="about">
+                <p>Hello! I'm <span class="highlight">Aarush Verulkar</span>, a Computer Science graduate student at the University of Southern California. My interests include software engineering, machine learning, and data science.</p>
+                <p>I'm passionate about creating elegant solutions to complex problems and continuously expanding my technical knowledge.</p>
+            </div>
+            
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">cat skills.txt</span>
+            </div>
+            <div class="response" id="skills">
+                <div class="section">
+                    <div class="section-title">// programming languages</div>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-java"></i></div>
-                    <div class="skill-name">Java</div>
+                
+                <div class="section">
+                    <div class="section-title">// frameworks & libraries</div>
+                    <div class="skills-list">
+                        <span class="skill-item">ReactJS</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">Keras</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Scikit-Learn</span>
+                        <span class="skill-item">SciPy</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                    <div class="skill-name">HTML</div>
+                
+                <div class="section">
+                    <div class="section-title">// databases</div>
+                    <div class="skills-list">
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                    <div class="skill-name">CSS</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-js"></i></div>
-                    <div class="skill-name">JavaScript</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-react"></i></div>
-                    <div class="skill-name">ReactJS</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <div class="skill-name">Django</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">MongoDB</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">PostgreSQL</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">MySQL</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                    <div class="skill-name">NumPy</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-table"></i></div>
-                    <div class="skill-name">Pandas</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <div class="skill-name">PyTorch</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="skill-name">Matplotlib</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <div class="skill-name">Keras</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <div class="skill-name">TensorFlow</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                    <div class="skill-name">Scikit-Learn</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-square-root-alt"></i></div>
-                    <div class="skill-name">SciPy</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                    <div class="skill-name">Git</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                    <div class="skill-name">AWS</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                    <div class="skill-name">Docker</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">Hadoop</div>
+                
+                <div class="section">
+                    <div class="section-title">// devops & tools</div>
+                    <div class="skills-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Hadoop</span>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">cat resume.txt</span>
+            </div>
+            <div class="response" id="resume">
+                <p>For a complete overview of my education, experience, and projects, check out my full resume:</p>
+                <p><a href="docs/resume.pdf" class="link">resume.pdf</a></p>
+            </div>
+            
+            <div class="prompt">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command">cat contact.txt</span>
+            </div>
+            <div class="response" id="contact">
+                <p>Feel free to reach out to me through any of the following channels:</p>
+                <p>Email: <a href="mailto:example@usc.edu" class="link">example@usc.edu</a></p>
+                <p>LinkedIn: <a href="#" class="link">linkedin.com/in/aarushverulkar</a></p>
+                <p>GitHub: <a href="#" class="link">github.com/aarushverulkar</a></p>
+            </div>
+            
+            <div class="active-command">
+                <span class="prompt-sign">$</span>
+                <span class="prompt-user">user@portfolio</span>
+                <span class="prompt-path">:~$</span>
+                <span class="prompt-command"></span>
+                <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Scroll to the active command at the bottom when page loads
+        window.onload = function() {
+            const terminalContent = document.querySelector('.terminal-content');
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+            
+            // Add click event listeners to nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        };
+    </script>
 </body>
 </html>

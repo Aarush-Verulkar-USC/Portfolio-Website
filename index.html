@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
         
         :root {
             --bg-color: #1a1a1a;
             --terminal-header: #282828;
             --text-primary: #f8f8f2;
             --text-secondary: #8F8F8F;
-            --accent-color: #50fa7b;
+            --accent-color: #fe640b;
             --accent-secondary: #bd93f9;
             --cursor-color: #ffffff;
             
@@ -182,7 +183,7 @@
         }
         
         .skill-item {
-            background-color: rgba(240, 240, 240, 0.05);
+            background-color: rgba(254, 100, 11, 0.1);
             border-radius: 3px;
             padding: 3px 8px;
             font-size: 12px;
@@ -198,8 +199,8 @@
         }
         
         .link:hover {
-            color: var(--text-primary);
-            border-bottom-color: var(--text-primary);
+            color: var(--accent-secondary);
+            border-bottom-color: var(--accent-secondary);
         }
         
         .typing {
@@ -232,8 +233,8 @@
         }
         
         .nav-link:hover {
-            color: var(--text-primary);
-            border-bottom-color: var(--text-primary);
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
         }
         
         /* Active command */
@@ -406,52 +407,53 @@
                 projects: `
                     <div class="response">
                         <div class="section">
-                            <div class="section-title">// project 1</div>
-                            <p><span class="highlight">Machine Learning Image Classifier</span></p>
-                            <p>Developed a deep learning model using PyTorch to classify images with 94% accuracy.</p>
-                            <p>Tech: Python, PyTorch, NumPy, Matplotlib</p>
-                            <p><a href="#" class="link">github.com/aarushverulkar/image-classifier</a></p>
+                            <div class="section-title">// projects</div>
+                            <p>Here is a collection of some of my recent projects. Each project showcases the skills and technologies I've applied to solve real-world problems.</p>
                         </div>
                         
                         <div class="section">
-                            <div class="section-title">// project 2</div>
-                            <p><span class="highlight">Personal Portfolio Website</span></p>
-                            <p>Designed and developed a responsive personal portfolio website using modern web technologies.</p>
-                            <p>Tech: HTML, CSS, JavaScript, React</p>
-                            <p><a href="#" class="link">github.com/aarushverulkar/portfolio</a></p>
+                            <div class="section-title">// intellihealth</div>
+                            <p><span class="highlight">A decentralized electronic health record system leveraging blockchain.</span></p>
+                            <p><a href="https://github.com/Aarush-Verulkar-USC/Intellihealth" class="link">github.com/Aarush-Verulkar-USC/Intellihealth</a></p>
                         </div>
                         
                         <div class="section">
-                            <div class="section-title">// project 3</div>
-                            <p><span class="highlight">Database Management System</span></p>
-                            <p>Built a custom DBMS with SQL-like query capabilities for a university course management system.</p>
-                            <p>Tech: Java, JDBC, PostgreSQL</p>
-                            <p><a href="#" class="link">github.com/aarushverulkar/dbms</a></p>
+                            <div class="section-title">// deep learning based conveyor belt object detection system</div>
+                            <p><span class="highlight">Achieved 95% accuracy in real-time classification.</span></p>
+                            <p><a href="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" class="link">github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System</a></p>
+                        </div>
+                        
+                        <div class="section">
+                            <div class="section-title">// cross-domain continual learning</div>
+                            <p><span class="highlight">Comparative analysis of EWC, GEM, and Experience Replay.</span></p>
+                            <p><a href="https://github.com/Aarush-Verulkar-USC/Continual-Learning" class="link">github.com/Aarush-Verulkar-USC/Continual-Learning</a></p>
+                        </div>
+                        
+                        <div class="section">
+                            <div class="section-title">// to do list</div>
+                            <p><span class="highlight">A simple CRUD-based React project with theme switcher.</span></p>
+                            <p><a href="https://github.com/Aarush-Verulkar-USC/To-Do-List" class="link">github.com/Aarush-Verulkar-USC/To-Do-List</a></p>
                         </div>
                     </div>
                 `,
                 research: `
                     <div class="response">
                         <div class="section">
-                            <div class="section-title">// research project 1</div>
-                            <p><span class="highlight">Explainable AI Methods for Medical Imaging</span></p>
-                            <p>Investigating methods to make deep learning models more interpretable for medical professionals.</p>
-                            <p>Collaborating with USC Medical School to develop tools that provide insight into model decisions.</p>
-                            <p>Tech: Python, TensorFlow, SHAP, Grad-CAM</p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// research project 2</div>
-                            <p><span class="highlight">Efficient Algorithms for Large-Scale Data Processing</span></p>
-                            <p>Developing optimized algorithms for processing and analyzing massive datasets.</p>
-                            <p>Focus on reducing computational complexity while maintaining accuracy.</p>
-                            <p>Tech: Python, C++, CUDA, Apache Spark</p>
+                            <div class="section-title">// research</div>
+                            <p>Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.</p>
                         </div>
                         
                         <div class="section">
                             <div class="section-title">// publications</div>
-                            <p>"Novel Approaches to Explainable AI in Medical Imaging" - IEEE Conference on Healthcare Informatics, 2024</p>
-                            <p>"Optimization Techniques for Large-Scale Data Processing" - ACM Journal of Computing, 2023</p>
+                            <p><span class="highlight">Intellihealth</span></p>
+                            <p>A Secured Decentralized Electronic Health Record System using Blockchain.</p>
+                            <p>Published in: IEEE ICBDS 2024</p>
+                            <p><a href="https://ieeexplore.ieee.org/document/10837083" class="link">ieeexplore.ieee.org/document/10837083</a></p>
+                        </div>
+                        
+                        <div class="section">
+                            <div class="section-title">// future work</div>
+                            <p>Stay Tuned.</p>
                         </div>
                     </div>
                 `,
@@ -463,10 +465,13 @@
                 `,
                 contact: `
                     <div class="response">
-                        <p>Feel free to reach out to me through any of the following channels:</p>
-                        <p>Email: <a href="mailto:example@usc.edu" class="link">example@usc.edu</a></p>
-                        <p>LinkedIn: <a href="#" class="link">linkedin.com/in/aarushverulkar</a></p>
-                        <p>GitHub: <a href="#" class="link">github.com/aarushverulkar</a></p>
+                        <p>Take a look at some recent work, or feel free to get in touch.</p>
+                        <div class="section">
+                            <div class="section-title">// contact channels</div>
+                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:verulkar@usc.edu" class="link">verulkar@usc.edu</a></p>
+                            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/aarush-verulkar" class="link">linkedin.com/in/aarush-verulkar</a></p>
+                            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/aarush-verulkar-usc" class="link">github.com/aarush-verulkar-usc</a></p>
+                        </div>
                     </div>
                 `,
                 help: `

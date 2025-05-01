@@ -203,6 +203,12 @@
             background-color: var(--accent-color);
         }
         
+                .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
         .resume-link {
             display: inline-flex;
             align-items: center;
@@ -215,7 +221,6 @@
             font-size: 12px;
             font-weight: 400;
             transition: var(--transition);
-            margin-top: 10px;
         }
         
         .resume-link:hover {
@@ -308,7 +313,9 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">av</a>
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/30x30" alt="Logo" width="20" height="20">
+            </a>
             <ul class="nav-links">
                 <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
                 <li class="nav-item"><a href="research.html" class="nav-link">research</a></li>
@@ -324,12 +331,20 @@
             <h2>computer science graduate student @ usc</h2>
             <div class="about-description">
                 <p>welcome to my portfolio. currently seeking summer 2025 internships in software engineering and machine learning roles.</p>
-                <a href="docs/resume.pdf" class="resume-link">
-                    resume
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                    </svg>
-                </a>
+                <div class="button-group">
+                    <a href="docs/resume.pdf" class="resume-link">
+                        resume
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                        </svg>
+                    </a>
+                    <a href="skills.html" class="resume-link">
+                        skills
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
 

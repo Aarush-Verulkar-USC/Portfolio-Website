@@ -34,7 +34,7 @@ A modern, interactive terminal-styled portfolio website showcasing my work and s
 
 1. Clone this repository
 ```bash
-git clone https://github.com/yourusername/terminal-portfolio.git
+git@github.com:Aarush-Verulkar-USC/Portfolio-Website.git
 ```
 
 2. Navigate to the project directory

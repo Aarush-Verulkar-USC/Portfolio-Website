@@ -2,7 +2,7 @@
 
 A modern, interactive terminal-styled portfolio website showcasing my work and skills as a developer.
 
-![Terminal Portfolio Screenshot](https://via.placeholder.com/800x400?text=Terminal+Portfolio+Screenshot)
+![Terminal Portfolio Screenshot](images/portfolio.png)
 
 ## 🚀 Features
 

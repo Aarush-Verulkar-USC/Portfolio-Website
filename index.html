@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Aarush Verulkar - Portfolio</title>
     <style>
         @font-face {
             font-family: 'Computer Modern Serif';
@@ -29,6 +29,22 @@
             font-style: normal;
         }
         
+        @font-face {
+            font-family: 'Computer Modern Bold';
+            src: url('fonts/cmunbx.woff') format('woff'),
+                 url('fonts/cmunbx.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Computer Modern Italic';
+            src: url('fonts/cmunti.woff') format('woff'),
+                 url('fonts/cmunti.woff2') format('woff2');
+            font-weight: normal;
+            font-style: italic;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -36,15 +52,15 @@
         }
         
         body {
-            background-color: #1e1e2e;
+            background-color: #121212;
             color: #a6adc8;
-            font-family: 'Computer Modern Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Computer Modern Sans', sans-serif;
             line-height: 1.6;
             padding: 40px;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Computer Modern Serif', 'Times New Roman', Times, serif;
+            font-family: 'Computer Modern Serif', serif;
             color: white;
             margin-bottom: 20px;
             font-weight: 400;
@@ -64,6 +80,7 @@
             margin-bottom: 20px;
             max-width: 600px;
             text-align: left;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         nav {
@@ -81,6 +98,7 @@
             font-size: 1rem;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         nav a:hover, nav a.active {
@@ -98,42 +116,19 @@
             opacity: 1;
         }
         
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            grid-gap: 30px;
-            margin-top: 40px;
-            max-width: 1200px;
-        }
-        
-        .project-card {
-            background-color: rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 4px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
         .projects-list li {
             position: relative;
             padding-left: 5px;
             margin-bottom: 25px;
             list-style-type: disc;
             color: #a6adc8;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         .projects-list li h3 {
             font-size: 1.4rem;
             margin-bottom: 5px;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         .skills-grid {
@@ -154,6 +149,7 @@
             margin-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 8px;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         .skill-category ul {
@@ -165,6 +161,7 @@
         .skill-category ul li {
             margin-bottom: 8px;
             color: #a6adc8;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         .contact-icons {
@@ -204,12 +201,14 @@
         .research-item h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         .research-meta {
             font-size: 0.9rem;
             color: rgba(166, 173, 200, 0.7);
             margin-bottom: 15px;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
     </style>
 </head>
@@ -221,64 +220,78 @@
     </nav>
     
     <div id="home" class="content active">
-        <h1>Hello, I'm Portfolio Owner</h1>
-        <p>Welcome to my minimalist portfolio website. I'm a [your profession] specializing in [your specialties]. With a background in [your background], I approach every project with creativity and technical precision.</p>
+        <h1>Hello, I'm Aarush Verulkar</h1>
+        <p>Welcome to my minimalist portfolio website. I'm a Computer Science graduate student at University of Southern California specializing in software engineering, machine learning, and data science. With a background in Computer Engineering with Honours in AI/ML from Mumbai University, I approach every project with creativity and technical precision.</p>
         
-        <p>My work focuses on creating meaningful solutions that combine aesthetics with functionality. I'm passionate about [your interests] and constantly exploring new techniques and tools to enhance my craft.</p>
+        <p>My work focuses on creating elegant solutions to complex problems through blockchain technology, machine learning, and web development. I'm passionate about developing secure systems and continuously expanding my technical knowledge.</p>
         
         <h2>Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Technical Skills</h3>
+                <h3>Programming Languages</h3>
                 <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                    <li>Skill 3</li>
-                    <li>Skill 4</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>SQL</li>
+                    <li>R</li>
+                    <li>Solidity</li>
+                    <li>Prolog</li>
                 </ul>
             </div>
             <div class="skill-category">
-                <h3>Research</h3>
+                <h3>Web Technologies</h3>
                 <ul>
-                    <li>Methodology 1</li>
-                    <li>Methodology 2</li>
-                    <li>Analysis Technique 1</li>
-                    <li>Analysis Technique 2</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>ReactJS</li>
+                    <li>Django</li>
+                    <li>MongoDB</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
                 </ul>
             </div>
             <div class="skill-category">
-                <h3>Tools</h3>
+                <h3>ML and DS</h3>
                 <ul>
-                    <li>Tool 1</li>
-                    <li>Tool 2</li>
-                    <li>Tool 3</li>
-                    <li>Tool 4</li>
+                    <li>NumPy</li>
+                    <li>Pandas</li>
+                    <li>PyTorch</li>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                    <li>Keras</li>
+                    <li>TensorFlow</li>
+                    <li>Scikit-Learn</li>
+                    <li>SciPy</li>
+                    <li>OpenCV</li>
                 </ul>
             </div>
             <div class="skill-category">
-                <h3>Languages</h3>
+                <h3>Other Technologies</h3>
                 <ul>
-                    <li>Language 1</li>
-                    <li>Language 2</li>
-                    <li>Language 3</li>
-                    <li>Language 4</li>
+                    <li>Tableau</li>
+                    <li>Excel</li>
+                    <li>MS Suite</li>
+                    <li>Git</li>
+                    <li>Hadoop</li>
+                    <li>AWS</li>
+                    <li>Docker</li>
                 </ul>
             </div>
         </div>
         
-        <p style="margin-top: 40px;">I have [number] years of experience working in [your industry]. I've collaborated with diverse clients ranging from startups to established businesses, helping them achieve their goals through thoughtful design and development.</p>
-        
-        <p>When I'm not working, you can find me [your hobbies or interests]. I believe that these activities inform my professional work, providing fresh perspectives and creative insights.</p>
+        <p style="margin-top: 40px;">I have experience in data analysis and software development. I've collaborated with teams to develop efficient solutions while also taking on leadership roles. Currently, I'm seeking summer 2025 internships in the field of computer science.</p>
         
         <div class="contact-icons">
-            <a href="mailto:your.email@example.com" class="contact-icon">
+            <a href="mailto:verulkar@usc.edu" class="contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect width="20" height="16" x="2" y="4" rx="2"/>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                 </svg>
             </a>
             
-            <a href="https://linkedin.com/in/yourname" target="_blank" class="contact-icon">
+            <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                     <rect width="4" height="12" x="2" y="9"/>
@@ -286,14 +299,14 @@
                 </svg>
             </a>
             
-            <a href="https://github.com/yourusername" target="_blank" class="contact-icon">
+            <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
                     <path d="M9 18c-4.51 2-5-2-7-2"/>
                 </svg>
             </a>
             
-            <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="contact-icon">
+            <a href="#" target="_blank" class="contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 1 12 24c-2.796 0-5.487-.46-8-1.308"/>
                     <path d="M12 14l-6.16-3.422a12.083 12.083 0 0 0-.665 6.479A11.952 11.952 0 0 0 12 24c2.796 0 5.487-.46 8-1.308"/>
@@ -306,24 +319,12 @@
     
     <div id="research" class="content">
         <h1>Research</h1>
-        <p>My research focuses on [research focus]. Here are some of my notable papers and publications.</p>
+        <p>My research focuses on blockchain technology and healthcare systems. Here are my publications and research work.</p>
         
         <div class="research-item">
-            <h3>Research Paper Title 1</h3>
-            <div class="research-meta">Published in Journal Name, 2024</div>
-            <p>This paper explores the intersection of [topic] and [another topic], proposing a novel framework for understanding [specific area]. The research demonstrates how [finding 1] and [finding 2] can be combined to create more effective solutions.</p>
-        </div>
-        
-        <div class="research-item">
-            <h3>Research Paper Title 2</h3>
-            <div class="research-meta">Conference Name, 2023</div>
-            <p>An investigation into [research topic], this paper presents empirical evidence for [theory or finding]. Through a series of experiments, we discovered that [key insight], which has significant implications for [field or application].</p>
-        </div>
-        
-        <div class="research-item">
-            <h3>Research Paper Title 3</h3>
-            <div class="research-meta">Journal Name, 2022</div>
-            <p>This collaborative research examines [topic] through the lens of [theoretical framework]. By analyzing [data type], we identified [pattern or trend] that challenges conventional understanding of [field].</p>
+            <h3>Intellihealth: Intelligent Health Record System</h3>
+            <div class="research-meta">Published in IEEE ICBDS, October 2024</div>
+            <p>Researched a blockchain-based decentralized EHR system with role-based access control, integrating a patient-assisting chatbot and ML models with 95%+ accuracy for preliminary disease detection from medical imaging.</p>
         </div>
     </div>
     
@@ -333,33 +334,23 @@
         
         <ul class="projects-list" style="margin-left: 25px; margin-top: 30px; max-width: 800px;">
             <li>
-                <h3>Project 1</h3>
-                <p>A [type of project] that [what it does]. Built with [technologies used], this project solves [problem] by [solution approach].</p>
+                <h3>Intellihealth: Intelligent Health Record System</h3>
+                <p>Created a Blockchain driven Electronic Health Record System, ensuring secure digital storage of medical documents and enhancing patient data accessibility by reducing retrieval time to under 2 seconds per document. Prepared secure smart contracts utilizing Solidity alongside industry-standard frameworks like Truffle and Ganache, resulting in a notable 40% improvement to the integrity of digital health records stored on-chain.</p>
             </li>
             
             <li>
-                <h3>Project 2</h3>
-                <p>An innovative [type of project] focused on [goal or purpose]. Implemented using [technologies], this solution provides [benefits or features].</p>
+                <h3>Continual Learning: Mitigating Catastrophic Forgetting</h3>
+                <p>Teamed up to conduct a thorough comparative analysis of Continual Learning techniques, concentrating on EWC, Experience Replay and GEM; mitigated catastrophic forgetting while enhancing image classification accuracy by 15% across MNIST dataset. Established benchmarks for performance on MNIST and collated model performance metrics, achieving a 93%+ test accuracy in joint training across contexts.</p>
             </li>
             
             <li>
-                <h3>Project 3</h3>
-                <p>A collaborative [type of project] that addresses [issue or need]. By leveraging [technologies or methodologies], we created a [description of solution].</p>
+                <h3>ConveCam</h3>
+                <p>Collaborated with a team to design and implement a smart conveyor belt system using YOLOv4 algorithm via Darknet framework, achieving 96% accuracy in real-time object detection and classification based on visual attributes. Integrated the system into a miniature supply-chain industry model, improving processing efficiency by 40% and reducing classification errors by 25% compared to initial benchmarks.</p>
             </li>
             
             <li>
-                <h3>Project 4</h3>
-                <p>A [scale or scope] project centered on [topic or function]. This work demonstrates [skills or techniques] and has resulted in [outcomes or impact].</p>
-            </li>
-            
-            <li>
-                <h3>Project 5</h3>
-                <p>An experimental [type of project] exploring [concept or idea]. Using [technologies or approaches], this project pushes boundaries in [field or discipline].</p>
-            </li>
-            
-            <li>
-                <h3>Project 6</h3>
-                <p>A [client or purpose] project that required [specific challenges]. The solution incorporated [technologies or methods] to achieve [goals or results].</p>
+                <h3>BlogLang</h3>
+                <p>Architected and deployed a full stack dual functionality web application incorporating a comprehensive blog platform with a secure admin interface for content creators. Engineered an intuitive language translation service that processes text across multiple languages.</p>
             </li>
         </ul>
     </div>

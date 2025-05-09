@@ -3,555 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarush Verulkar</title>
-    <link rel="icon" href="images/tab.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&display=swap');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+        @font-face {
+            font-family: 'Computer Modern Serif';
+            src: url('cmunrm.woff') format('woff'),
+                 url('cmunrm.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
         
-        :root {
-            --bg-color: #1a1a1a;
-            --terminal-header: #282828;
-            --text-primary: #f8f8f2;
-            --text-secondary: #8F8F8F;
-            --accent-color: #04a5e5;
-            --accent-secondary: #bd93f9;
-            --cursor-color: #ffffff;
-            
-            --font-mono: 'Geist Mono', monospace;
-            --transition: all 0.2s ease-in-out;
+        @font-face {
+            font-family: 'Computer Modern Sans';
+            src: url('cmunss.woff') format('woff'),
+                 url('cmunss.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Computer Modern Typewriter';
+            src: url('cmuntt.woff') format('woff'),
+                 url('cmuntt.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
         }
         
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-mono);
-            font-size: 14px;
+            background-color: #1e1e2e;
+            color: #a6adc8;
+            font-family: 'Computer Modern Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
+            padding: 40px;
         }
         
-        .terminal {
-            width: 90%;
-            max-width: 850px;
-            height: 90vh;
-            margin: 5vh auto;
-            background-color: var(--bg-color);
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .terminal-header {
-            height: 28px;
-            background-color: var(--terminal-header);
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            position: relative;
-        }
-        
-        .window-controls {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .control {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .control.red {
-            background-color: #ff5f56;
-        }
-        
-        .control.yellow {
-            background-color: #ffbd2e;
-        }
-        
-        .control.green {
-            background-color: #27c93f;
-        }
-        
-        .terminal-title {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 12px;
-            color: var(--text-secondary);
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Computer Modern Serif', 'Times New Roman', Times, serif;
+            color: white;
+            margin-bottom: 20px;
             font-weight: 400;
         }
         
-        .terminal-content {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            font-size: 13px;
+        h1 {
+            font-size: 3rem;
+            margin-top: 60px;
         }
         
-        .terminal-content::-webkit-scrollbar {
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 40px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        nav {
+            display: flex;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav a {
+            margin-right: 25px;
+            color: #a6adc8;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            color: white;
+        }
+        
+        .content {
             display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
         
-        .prompt {
-            display: flex;
+        .content.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+        }
+        
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 4px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .project-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
         
-        .prompt-sign {
-            color: var(--accent-color);
-            margin-right: 8px;
-            font-weight: 500;
+        .projects-list li {
+            position: relative;
+            padding-left: 5px;
+            margin-bottom: 25px;
+            list-style-type: disc;
+            color: #a6adc8;
         }
         
-        .prompt-user {
-            color: var(--accent-secondary);
-            margin-right: 5px;
-        }
-        
-        .prompt-path {
-            color: var(--text-secondary);
-            margin-right: 8px;
-        }
-        
-        .prompt-command {
-            color: var(--text-primary);
-        }
-        
-        .response {
-            margin-left: 0;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        
-        .response p {
-            margin-bottom: 10px;
-        }
-        
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 15px;
-            background-color: var(--cursor-color);
-            vertical-align: middle;
-            animation: blink 1s step-end infinite;
-            margin-top: -2px;
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        .highlight {
-            color: var(--accent-color);
-        }
-        
-        .section {
-            margin-bottom: 10px;
-        }
-        
-        .section-title {
-            color: var(--accent-secondary);
+        .projects-list li h3 {
+            font-size: 1.4rem;
             margin-bottom: 5px;
-            font-weight: 500;
         }
         
-        .skills-list {
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 25px;
+            margin-bottom: 40px;
+            max-width: 1000px;
+        }
+        
+        .skill-category {
+            margin-bottom: 30px;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skill-category ul li {
+            margin-bottom: 8px;
+            color: #a6adc8;
+        }
+        
+        .contact-icons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #2b2b40;
+            color: #a6adc8;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-icon:hover {
+            transform: translateY(-3px);
+            background-color: #34344e;
+        }
+        
+        .research-item {
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+        
+        .research-item h3 {
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
         
-        .skill-item {
-            background-color: rgba(254, 100, 11, 0.1);
-            border-radius: 3px;
-            padding: 3px 8px;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-        
-        .link {
-            color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent-color);
-            padding-bottom: 1px;
-            transition: var(--transition);
-        }
-        
-        .link:hover {
-            color: var(--accent-secondary);
-            border-bottom-color: var(--accent-secondary);
-        }
-        
-        .typing {
-            animation: typing 3.5s steps(40, end);
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        /* Navigation links */
-        .nav-links {
-            display: flex;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .nav-item {
-            margin-right: 15px;
-        }
-        
-        .nav-link {
-            color: var(--accent-secondary);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--accent-secondary);
-            padding-bottom: 1px;
-            transition: var(--transition);
-            font-size: 12px;
-        }
-        
-        .nav-link:hover {
-            color: var(--accent-color);
-            border-bottom-color: var(--accent-color);
-        }
-        
-        /* Active command */
-        .active-command {
-            display: flex;
-            margin-top: 20px;
-        }
-        
-        /* Media queries */
-        @media (max-width: 768px) {
-            .terminal {
-                width: 95%;
-                height: 95vh;
-                margin: 2.5vh auto;
-            }
-            
-            .terminal-content {
-                padding: 10px;
-                font-size: 12px;
-            }
-            
-            .terminal-header {
-                height: 24px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .terminal {
-                width: 100%;
-                height: 100vh;
-                margin: 0;
-                border-radius: 0;
-            }
-            
-            .terminal-content {
-                padding: 8px;
-                font-size: 11px;
-            }
-            
-            .terminal-header {
-                height: 22px;
-            }
-            
-            .control {
-                width: 10px;
-                height: 10px;
-            }
+        .research-meta {
+            font-size: 0.9rem;
+            color: rgba(166, 173, 200, 0.7);
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="window-controls">
-                <div class="control red"></div>
-                <div class="control yellow"></div>
-                <div class="control green"></div>
+    <nav>
+        <a href="#home" class="nav-link active" data-page="home">Home</a>
+        <a href="#research" class="nav-link" data-page="research">Research</a>
+        <a href="#projects" class="nav-link" data-page="projects">Projects</a>
+    </nav>
+    
+    <div id="home" class="content active">
+        <h1>Hello, I'm Portfolio Owner</h1>
+        <p>Welcome to my minimalist portfolio website. I'm a [your profession] specializing in [your specialties]. With a background in [your background], I approach every project with creativity and technical precision.</p>
+        
+        <p>My work focuses on creating meaningful solutions that combine aesthetics with functionality. I'm passionate about [your interests] and constantly exploring new techniques and tools to enhance my craft.</p>
+        
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Skill 1</li>
+                    <li>Skill 2</li>
+                    <li>Skill 3</li>
+                    <li>Skill 4</li>
+                </ul>
             </div>
-            <div class="terminal-title">bash -- 80x24</div>
+            <div class="skill-category">
+                <h3>Research</h3>
+                <ul>
+                    <li>Methodology 1</li>
+                    <li>Methodology 2</li>
+                    <li>Analysis Technique 1</li>
+                    <li>Analysis Technique 2</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Tool 1</li>
+                    <li>Tool 2</li>
+                    <li>Tool 3</li>
+                    <li>Tool 4</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Language 1</li>
+                    <li>Language 2</li>
+                    <li>Language 3</li>
+                    <li>Language 4</li>
+                </ul>
+            </div>
         </div>
-        <div class="terminal-content">
-            <div class="prompt">
-                <span class="prompt-sign">$</span>
-                <span class="prompt-user">user@portfolio</span>
-                <span class="prompt-path">:~$</span>
-                <span class="prompt-command">whoami</span>
-            </div>
-            <div class="response">
-                <p>aarush verulkar</p>
-                <p>computer science graduate student @ usc</p>
-                <p>currently seeking summer 2025 internships</p>
-            </div>
+        
+        <p style="margin-top: 40px;">I have [number] years of experience working in [your industry]. I've collaborated with diverse clients ranging from startups to established businesses, helping them achieve their goals through thoughtful design and development.</p>
+        
+        <p>When I'm not working, you can find me [your hobbies or interests]. I believe that these activities inform my professional work, providing fresh perspectives and creative insights.</p>
+        
+        <div class="contact-icons">
+            <a href="mailto:your.email@example.com" class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
             
-            <div class="prompt">
-                <span class="prompt-sign">$</span>
-                <span class="prompt-user">user@portfolio</span>
-                <span class="prompt-path">:~$</span>
-                <span class="prompt-command">help</span>
-            </div>
-            <div class="response">
-                <p>available commands:</p>
-                <p><span class="highlight">about</span> - display information about me</p>
-                <p><span class="highlight">skills</span> - list my technical skills</p>
-                <p><span class="highlight">projects</span> - view my projects</p>
-                <p><span class="highlight">research</span> - explore my research work</p>
-                <p><span class="highlight">resume</span> - download my resume</p>
-                <p><span class="highlight">contact</span> - get my contact information</p>
-                <p><span class="highlight">clear</span> - clear the terminal</p>
-                <p><span class="highlight">help</span> - display this help message</p>
-            </div>
+            <a href="https://linkedin.com/in/yourname" target="_blank" class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect width="4" height="12" x="2" y="9"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+            </a>
             
-            <div id="command-history">
-                <!-- Command history will be dynamically populated here -->
-            </div>
+            <a href="https://github.com/yourusername" target="_blank" class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                </svg>
+            </a>
             
-            <div class="active-command">
-                <span class="prompt-sign">$</span>
-                <span class="prompt-user">user@portfolio</span>
-                <span class="prompt-path">:~$</span>
-                <span id="current-command" class="prompt-command"></span>
-                <span class="cursor"></span>
-            </div>
+            <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 1 12 24c-2.796 0-5.487-.46-8-1.308"/>
+                    <path d="M12 14l-6.16-3.422a12.083 12.083 0 0 0-.665 6.479A11.952 11.952 0 0 0 12 24c2.796 0 5.487-.46 8-1.308"/>
+                    <circle cx="12" cy="8" r="7"/>
+                    <circle cx="12" cy="8" r="3"/>
+                </svg>
+            </a>
         </div>
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const terminalContent = document.querySelector('.terminal-content');
-            const commandHistory = document.getElementById('command-history');
-            const currentCommand = document.getElementById('current-command');
-            let commandBuffer = '';
+    <div id="research" class="content">
+        <h1>Research</h1>
+        <p>My research focuses on [research focus]. Here are some of my notable papers and publications.</p>
+        
+        <div class="research-item">
+            <h3>Research Paper Title 1</h3>
+            <div class="research-meta">Published in Journal Name, 2024</div>
+            <p>This paper explores the intersection of [topic] and [another topic], proposing a novel framework for understanding [specific area]. The research demonstrates how [finding 1] and [finding 2] can be combined to create more effective solutions.</p>
+        </div>
+        
+        <div class="research-item">
+            <h3>Research Paper Title 2</h3>
+            <div class="research-meta">Conference Name, 2023</div>
+            <p>An investigation into [research topic], this paper presents empirical evidence for [theory or finding]. Through a series of experiments, we discovered that [key insight], which has significant implications for [field or application].</p>
+        </div>
+        
+        <div class="research-item">
+            <h3>Research Paper Title 3</h3>
+            <div class="research-meta">Journal Name, 2022</div>
+            <p>This collaborative research examines [topic] through the lens of [theoretical framework]. By analyzing [data type], we identified [pattern or trend] that challenges conventional understanding of [field].</p>
+        </div>
+    </div>
+    
+    <div id="projects" class="content">
+        <h1>Projects</h1>
+        <p>Below are some selected projects that showcase my skills and expertise.</p>
+        
+        <ul class="projects-list" style="margin-left: 25px; margin-top: 30px; max-width: 800px;">
+            <li>
+                <h3>Project 1</h3>
+                <p>A [type of project] that [what it does]. Built with [technologies used], this project solves [problem] by [solution approach].</p>
+            </li>
             
-            // Content templates for commands
-            const contentTemplates = {
-                about: `
-                    <div class="response">
-                        <p>Hello! I'm <span class="highlight">Aarush Verulkar</span>, a Computer Science graduate student at the University of Southern California. My interests include software engineering, machine learning, and data science.</p>
-                        <p>I'm passionate about creating elegant solutions to complex problems and continuously expanding my technical knowledge.</p>
-                    </div>
-                `,
-                skills: `
-                    <div class="response">
-                        <div class="section">
-                            <div class="section-title">// programming languages</div>
-                            <div class="skills-list">
-                                <span class="skill-item">Python</span>
-                                <span class="skill-item">Java</span>
-                                <span class="skill-item">JavaScript</span>
-                                <span class="skill-item">HTML</span>
-                                <span class="skill-item">CSS</span>
-                            </div>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// frameworks & libraries</div>
-                            <div class="skills-list">
-                                <span class="skill-item">ReactJS</span>
-                                <span class="skill-item">Django</span>
-                                <span class="skill-item">PyTorch</span>
-                                <span class="skill-item">TensorFlow</span>
-                                <span class="skill-item">Keras</span>
-                                <span class="skill-item">NumPy</span>
-                                <span class="skill-item">Pandas</span>
-                                <span class="skill-item">Matplotlib</span>
-                                <span class="skill-item">Scikit-Learn</span>
-                                <span class="skill-item">SciPy</span>
-                            </div>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// databases</div>
-                            <div class="skills-list">
-                                <span class="skill-item">MongoDB</span>
-                                <span class="skill-item">PostgreSQL</span>
-                                <span class="skill-item">MySQL</span>
-                            </div>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// devops & tools</div>
-                            <div class="skills-list">
-                                <span class="skill-item">Git</span>
-                                <span class="skill-item">AWS</span>
-                                <span class="skill-item">Docker</span>
-                                <span class="skill-item">Hadoop</span>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                projects: `
-                    <div class="response">
-                        <div class="section">
-                            <div class="section-title">// projects</div>
-                            <p>Here is a collection of some of my recent projects. Each project showcases the skills and technologies I've applied to solve real-world problems.</p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// intellihealth</div>
-                            <p><span class="highlight">A decentralized electronic health record system leveraging blockchain.</span></p>
-                            <p><a href="https://github.com/Aarush-Verulkar-USC/Intellihealth" class="link">github.com/Aarush-Verulkar-USC/Intellihealth</a></p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// deep learning based conveyor belt object detection system</div>
-                            <p><span class="highlight">Achieved 95% accuracy in real-time classification.</span></p>
-                            <p><a href="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" class="link">github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System</a></p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// cross-domain continual learning</div>
-                            <p><span class="highlight">Comparative analysis of EWC, GEM, and Experience Replay.</span></p>
-                            <p><a href="https://github.com/Aarush-Verulkar-USC/Continual-Learning" class="link">github.com/Aarush-Verulkar-USC/Continual-Learning</a></p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// to do list</div>
-                            <p><span class="highlight">A simple CRUD-based React project with theme switcher.</span></p>
-                            <p><a href="https://github.com/Aarush-Verulkar-USC/To-Do-List" class="link">github.com/Aarush-Verulkar-USC/To-Do-List</a></p>
-                        </div>
-                    </div>
-                `,
-                research: `
-                    <div class="response">
-                        <div class="section">
-                            <div class="section-title">// research</div>
-                            <p>Welcome to my research page! Here, I share my ongoing work, publications, and ideas for future exploration.</p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// publications</div>
-                            <p><span class="highlight">Intellihealth</span></p>
-                            <p>A Secured Decentralized Electronic Health Record System using Blockchain.</p>
-                            <p>Published in: IEEE ICBDS 2024</p>
-                            <p><a href="https://ieeexplore.ieee.org/document/10837083" class="link">ieeexplore.ieee.org/document/10837083</a></p>
-                        </div>
-                        
-                        <div class="section">
-                            <div class="section-title">// future work</div>
-                            <p>Stay Tuned.</p>
-                        </div>
-                    </div>
-                `,
-                resume: `
-                    <div class="response">
-                        <p>For a complete overview of my education, experience, and projects, check out my full resume:</p>
-                        <p><a href="docs/resume.pdf" class="link">resume.pdf</a></p>
-                    </div>
-                `,
-                contact: `
-                    <div class="response">
-                        <p>Take a look at some recent work, or feel free to get in touch.</p>
-                        <div class="section">
-                            <div class="section-title">// contact channels</div>
-                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:verulkar@usc.edu" class="link">verulkar@usc.edu</a></p>
-                            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/aarush-verulkar" class="link">linkedin.com/in/aarush-verulkar</a></p>
-                            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/aarush-verulkar-usc" class="link">github.com/aarush-verulkar-usc</a></p>
-                        </div>
-                    </div>
-                `,
-                help: `
-                    <div class="response">
-                        <p>available commands:</p>
-                        <p><span class="highlight">about</span> - display information about me</p>
-                        <p><span class="highlight">skills</span> - list my technical skills</p>
-                        <p><span class="highlight">projects</span> - view my projects</p>
-                        <p><span class="highlight">research</span> - explore my research work</p>
-                        <p><span class="highlight">resume</span> - download my resume</p>
-                        <p><span class="highlight">contact</span> - get my contact information</p>
-                        <p><span class="highlight">clear</span> - clear the terminal</p>
-                        <p><span class="highlight">help</span> - display this help message</p>
-                    </div>
-                `
+            <li>
+                <h3>Project 2</h3>
+                <p>An innovative [type of project] focused on [goal or purpose]. Implemented using [technologies], this solution provides [benefits or features].</p>
+            </li>
+            
+            <li>
+                <h3>Project 3</h3>
+                <p>A collaborative [type of project] that addresses [issue or need]. By leveraging [technologies or methodologies], we created a [description of solution].</p>
+            </li>
+            
+            <li>
+                <h3>Project 4</h3>
+                <p>A [scale or scope] project centered on [topic or function]. This work demonstrates [skills or techniques] and has resulted in [outcomes or impact].</p>
+            </li>
+            
+            <li>
+                <h3>Project 5</h3>
+                <p>An experimental [type of project] exploring [concept or idea]. Using [technologies or approaches], this project pushes boundaries in [field or discipline].</p>
+            </li>
+            
+            <li>
+                <h3>Project 6</h3>
+                <p>A [client or purpose] project that required [specific challenges]. The solution incorporated [technologies or methods] to achieve [goals or results].</p>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Update active nav link
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Show corresponding content
+                    const targetPage = link.getAttribute('data-page');
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === targetPage) {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    // Update URL hash
+                    window.location.hash = targetPage;
+                });
+            });
+            
+            // Handle direct URL access with hash
+            const handleHashChange = () => {
+                const hash = window.location.hash.substring(1) || 'home';
+                const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
+                if (targetLink) {
+                    targetLink.click();
+                }
             };
             
-            // Handle keyboard input
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    // Execute command
-                    const command = commandBuffer.trim().toLowerCase();
-                    executeCommand(command);
-                    commandBuffer = '';
-                    currentCommand.textContent = '';
-                } else if (e.key === 'Backspace') {
-                    // Delete last character
-                    commandBuffer = commandBuffer.slice(0, -1);
-                    currentCommand.textContent = commandBuffer;
-                } else if (e.key.length === 1) {
-                    // Add character to buffer
-                    commandBuffer += e.key;
-                    currentCommand.textContent = commandBuffer;
-                }
-            });
-            
-            // Focus on terminal when clicking anywhere
-            document.addEventListener('click', function() {
-                // Scroll to bottom
-                terminalContent.scrollTop = terminalContent.scrollHeight;
-            });
-            
-            // Function to execute commands
-            function executeCommand(command) {
-                // Create command prompt element
-                const promptElement = document.createElement('div');
-                promptElement.className = 'prompt';
-                promptElement.innerHTML = `
-                    <span class="prompt-sign">$</span>
-                    <span class="prompt-user">user@portfolio</span>
-                    <span class="prompt-path">:~$</span>
-                    <span class="prompt-command">${command}</span>
-                `;
-                commandHistory.appendChild(promptElement);
-                
-                // Process command
-                if (command === 'clear') {
-                    // Clear terminal
-                    commandHistory.innerHTML = '';
-                } else if (contentTemplates[command]) {
-                    // Display content for valid command
-                    const responseDiv = document.createElement('div');
-                    responseDiv.innerHTML = contentTemplates[command];
-                    commandHistory.appendChild(responseDiv.firstElementChild);
-                } else if (command === '') {
-                    // Empty command, do nothing
-                } else {
-                    // Unknown command
-                    const responseDiv = document.createElement('div');
-                    responseDiv.className = 'response';
-                    responseDiv.innerHTML = `<p>command not found: ${command}. Type <span class="highlight">help</span> for available commands.</p>`;
-                    commandHistory.appendChild(responseDiv);
-                }
-                
-                // Scroll to bottom
-                terminalContent.scrollTop = terminalContent.scrollHeight;
-            }
-            
-            // Initial focus on terminal
-            terminalContent.scrollTop = terminalContent.scrollHeight;
+            window.addEventListener('hashchange', handleHashChange);
+            handleHashChange(); // Run on initial load
         });
     </script>
 </body>

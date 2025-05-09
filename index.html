@@ -49,6 +49,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         body {
@@ -68,12 +69,14 @@
         
         h1 {
             font-size: 3rem;
-            margin-top: 60px;
+            margin-top: 20px;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         h2 {
             font-size: 2.2rem;
             margin-top: 40px;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         p {
@@ -85,10 +88,15 @@
         
         nav {
             display: flex;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 15px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            background-color: #121212;
+            z-index: 100;
+            padding-top: 15px;
         }
         
         nav a {
@@ -129,39 +137,57 @@
             font-size: 1.4rem;
             margin-bottom: 5px;
             font-family: 'Computer Modern Serif', serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #a6adc8;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            display: block;
             margin-top: 25px;
             margin-bottom: 40px;
             max-width: 1000px;
+            list-style-type: disc;
+            padding-left: 20px;
         }
         
         .skill-category {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            font-family: 'Computer Modern Sans', sans-serif;
         }
         
         .skill-category h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
             font-family: 'Computer Modern Serif', serif;
+            display: inline;
+            font-weight: normal;
         }
         
-        .skill-category ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .skill-category ul li {
-            margin-bottom: 8px;
+        .skill-content {
+            display: inline;
             color: #a6adc8;
             font-family: 'Computer Modern Sans', sans-serif;
+            margin-left: 10px;
         }
         
         .contact-icons {
@@ -226,60 +252,24 @@
         <p>My work focuses on creating elegant solutions to complex problems through blockchain technology, machine learning, and web development. I'm passionate about developing secure systems and continuously expanding my technical knowledge.</p>
         
         <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>SQL</li>
-                    <li>R</li>
-                    <li>Solidity</li>
-                    <li>Prolog</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Web Technologies</h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>ReactJS</li>
-                    <li>Django</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
-                    <li>MySQL</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>ML and DS</h3>
-                <ul>
-                    <li>NumPy</li>
-                    <li>Pandas</li>
-                    <li>PyTorch</li>
-                    <li>Matplotlib</li>
-                    <li>Seaborn</li>
-                    <li>Keras</li>
-                    <li>TensorFlow</li>
-                    <li>Scikit-Learn</li>
-                    <li>SciPy</li>
-                    <li>OpenCV</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Other Technologies</h3>
-                <ul>
-                    <li>Tableau</li>
-                    <li>Excel</li>
-                    <li>MS Suite</li>
-                    <li>Git</li>
-                    <li>Hadoop</li>
-                    <li>AWS</li>
-                    <li>Docker</li>
-                </ul>
-            </div>
-        </div>
+        <ul class="skills-grid">
+            <li class="skill-category">
+                <h3>Programming Languages:</h3>
+                <span class="skill-content">Python, Java, C, SQL, R, Solidity, Prolog</span>
+            </li>
+            <li class="skill-category">
+                <h3>Web Technologies:</h3>
+                <span class="skill-content">HTML, CSS, JavaScript, ReactJS, Django, MongoDB, PostgreSQL, MySQL</span>
+            </li>
+            <li class="skill-category">
+                <h3>ML and DS:</h3>
+                <span class="skill-content">NumPy, Pandas, PyTorch, Matplotlib, Seaborn, Keras, TensorFlow, Scikit-Learn, SciPy, OpenCV</span>
+            </li>
+            <li class="skill-category">
+                <h3>Other Technologies:</h3>
+                <span class="skill-content">Tableau, Excel, MS Suite, Git, Hadoop, AWS, Docker</span>
+            </li>
+        </ul>
         
         <p style="margin-top: 40px;">I have experience in data analysis and software development. I've collaborated with teams to develop efficient solutions while also taking on leadership roles. Currently, I'm seeking summer 2025 internships in the field of computer science.</p>
         
@@ -334,22 +324,58 @@
         
         <ul class="projects-list" style="margin-left: 25px; margin-top: 30px; max-width: 800px;">
             <li>
-                <h3>Intellihealth: Intelligent Health Record System</h3>
+                <h3>
+                    Intellihealth: Intelligent Health Record System
+                    <a href="https://github.com/Aarush-Verulkar-USC/Intellihealth" class="project-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
                 <p>Created a Blockchain driven Electronic Health Record System, ensuring secure digital storage of medical documents and enhancing patient data accessibility by reducing retrieval time to under 2 seconds per document. Prepared secure smart contracts utilizing Solidity alongside industry-standard frameworks like Truffle and Ganache, resulting in a notable 40% improvement to the integrity of digital health records stored on-chain.</p>
             </li>
             
             <li>
-                <h3>Continual Learning: Mitigating Catastrophic Forgetting</h3>
+                <h3>
+                    Continual Learning: Mitigating Catastrophic Forgetting
+                    <a href="https://github.com/Aarush-Verulkar-USC/Continual-Learning" class="project-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
                 <p>Teamed up to conduct a thorough comparative analysis of Continual Learning techniques, concentrating on EWC, Experience Replay and GEM; mitigated catastrophic forgetting while enhancing image classification accuracy by 15% across MNIST dataset. Established benchmarks for performance on MNIST and collated model performance metrics, achieving a 93%+ test accuracy in joint training across contexts.</p>
             </li>
             
             <li>
-                <h3>ConveCam</h3>
+                <h3>
+                    ConveCam
+                    <a href="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" class="project-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
                 <p>Collaborated with a team to design and implement a smart conveyor belt system using YOLOv4 algorithm via Darknet framework, achieving 96% accuracy in real-time object detection and classification based on visual attributes. Integrated the system into a miniature supply-chain industry model, improving processing efficiency by 40% and reducing classification errors by 25% compared to initial benchmarks.</p>
             </li>
             
             <li>
-                <h3>BlogLang</h3>
+                <h3>
+                    BlogLang
+                    <a href="https://github.com/Aarush-Verulkar-USC/To-Do-List" class="project-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
                 <p>Architected and deployed a full stack dual functionality web application incorporating a comprehensive blog platform with a secure admin interface for content creators. Engineered an intuitive language translation service that processes text across multiple languages.</p>
             </li>
         </ul>
@@ -368,7 +394,7 @@
                     navLinks.forEach(item => item.classList.remove('active'));
                     link.classList.add('active');
                     
-                    // Show corresponding content
+                    // Show corresponding content without scrolling
                     const targetPage = link.getAttribute('data-page');
                     contentSections.forEach(section => {
                         section.classList.remove('active');
@@ -377,8 +403,8 @@
                         }
                     });
                     
-                    // Update URL hash
-                    window.location.hash = targetPage;
+                    // Update URL hash without scrolling
+                    history.pushState(null, null, `#${targetPage}`);
                 });
             });
             
@@ -387,12 +413,26 @@
                 const hash = window.location.hash.substring(1) || 'home';
                 const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
                 if (targetLink) {
-                    targetLink.click();
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    targetLink.classList.add('active');
+                    
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === hash) {
+                            section.classList.add('active');
+                        }
+                    });
                 }
             };
             
-            window.addEventListener('hashchange', handleHashChange);
-            handleHashChange(); // Run on initial load
+            // Prevent default hash behavior that causes scrolling
+            window.addEventListener('hashchange', (e) => {
+                e.preventDefault();
+                handleHashChange();
+            });
+            
+            // Initial load
+            handleHashChange();
         });
     </script>
 </body>

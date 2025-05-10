@@ -3,61 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Aarush Verulkar - Portfolio</title>
     <link rel="icon" type="image/x-icon" href="images/tab.png">
     <style>
-        @font-face {
-            font-family: 'Computer Modern Serif';
-            src: url('fonts/cmunrm.woff') format('woff'),
-                 url('fonts/cmunrm.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Computer Modern Sans';
-            src: url('fonts/cmunss.woff') format('woff'),
-                 url('fonts/cmunss.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Computer Modern Typewriter';
-            src: url('fonts/cmuntt.woff') format('woff'),
-                 url('fonts/cmuntt.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Computer Modern Bold';
-            src: url('fonts/cmunbx.woff') format('woff'),
-                 url('fonts/cmunbx.woff2') format('woff2');
-            font-weight: bold;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Computer Modern Italic';
-            src: url('fonts/cmunti.woff') format('woff'),
-                 url('fonts/cmunti.woff2') format('woff2');
-            font-weight: normal;
-            font-style: italic;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&display=swap');
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         body {
             background-color: #121212;
             color: #a6adc8;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             padding: 40px;
             max-width: 1200px;
@@ -65,7 +27,7 @@
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
             color: white;
             margin-bottom: 20px;
             font-weight: 400;
@@ -74,20 +36,20 @@
         h1 {
             font-size: 3rem;
             margin-top: 20px;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
         }
         
         h2 {
             font-size: 2.2rem;
             margin-top: 40px;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
         }
         
         p {
             margin-bottom: 20px;
             max-width: 100%;
             text-align: justify;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Inter', sans-serif;
         }
         
         nav {
@@ -110,7 +72,7 @@
             font-size: 1rem;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Geist Sans', sans-serif;
         }
         
         nav a:hover, nav a.active {
@@ -134,13 +96,13 @@
             margin-bottom: 25px;
             list-style-type: disc;
             color: #a6adc8;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .projects-list li h3 {
             font-size: 1.4rem;
             margin-bottom: 5px;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -182,13 +144,13 @@
         
         .skill-category {
             margin-bottom: 15px;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .skill-category h3 {
             font-size: 1.1rem;
             margin-bottom: 5px;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
             display: inline;
             font-weight: normal;
         }
@@ -196,7 +158,7 @@
         .skill-content {
             display: inline;
             color: #a6adc8;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Inter', sans-serif;
             margin-left: 10px;
         }
         
@@ -238,17 +200,28 @@
             text-align: justify;
         }
         
+        .link {
+            color: #a6adc8;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .link:hover {
+            color: white;
+        }
+        
         .research-item h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            font-family: 'Computer Modern Serif', serif;
+            font-family: 'Geist Sans', sans-serif;
         }
         
         .research-meta {
             font-size: 0.9rem;
             color: rgba(166, 173, 200, 0.7);
             margin-bottom: 15px;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
@@ -261,8 +234,10 @@
     
     <div id="home" class="content active">
         <h1>Hello, I'm Aarush Verulkar</h1>
-        <p>I’m a goal-oriented student with experience in Machine Learning, Blockchain, and Full Stack Development. I've worked for startups and enterprises, and enjoy writing new code as well as contributing to open-source projects. I'm optimistic and business-minded, and consider collaboration and communication strong suits. I graduated from Mumbai University with a bachelor’s in Computer Engineering and I am currently pursuing my master’s degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and exploring ML is routine. When I’m not coding, I’m either outside, traveling, cooking, playing Table Tennis, or reading a history book. I’m also passionate about startups, finance, and everything tech. I’m usually wearing a smile.</p>
-                
+        <p>Welcome to my minimalist portfolio website. I'm a Computer Science graduate student at University of Southern California specializing in software engineering, machine learning, and data science. With a background in Computer Engineering with Honours in AI/ML from Mumbai University, I approach every project with creativity and technical precision.</p>
+        
+        <p>My work focuses on creating elegant solutions to complex problems through blockchain technology, machine learning, and web development. I'm passionate about developing secure systems and continuously expanding my technical knowledge.</p>
+        
         <h2>Skills</h2>
         <ul class="skills-grid">
             <li class="skill-category">

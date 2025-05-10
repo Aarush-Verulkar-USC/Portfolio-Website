@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarush Verulkar - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/images/tab.png">
     <style>
         @font-face {
             font-family: 'Computer Modern Serif';
@@ -59,6 +58,8 @@
             font-family: 'Computer Modern Sans', sans-serif;
             line-height: 1.6;
             padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -82,9 +83,9 @@
         
         p {
             margin-bottom: 20px;
-            max-width: 600px;
-            text-align: left;
-            font-family: 'Computer Modern Sans', sans-serif;
+            max-width: 100%;
+            text-align: justify;
+            font-family: 'Computer Modern Serif', serif;
         }
         
         nav {
@@ -162,11 +163,17 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
         
+        .projects-list {
+            margin-left: 25px;
+            margin-top: 30px;
+            max-width: 100%;
+        }
+        
         .skills-grid {
             display: block;
             margin-top: 25px;
             margin-bottom: 40px;
-            max-width: 1000px;
+            max-width: 100%;
             list-style-type: disc;
             padding-left: 20px;
         }
@@ -187,7 +194,7 @@
         .skill-content {
             display: inline;
             color: #a6adc8;
-            font-family: 'Computer Modern Sans', sans-serif;
+            font-family: 'Computer Modern Serif', serif;
             margin-left: 10px;
         }
         
@@ -222,7 +229,11 @@
         
         .research-item {
             margin-bottom: 40px;
-            max-width: 800px;
+            max-width: 100%;
+        }
+        
+        .projects-list li p {
+            text-align: justify;
         }
         
         .research-item h3 {
@@ -248,8 +259,9 @@
     
     <div id="home" class="content active">
         <h1>Hello, I'm Aarush Verulkar</h1>
-        <p>I’m a goal-oriented student with experience in Machine Learning, Blockchain, and Full Stack Development. I've worked for startups and enterprises, and enjoy writing new code as well as contributing to open-source projects. I'm optimistic and business-minded, and consider collaboration and communication strong suits. I graduated from Mumbai University with a bachelor’s in Computer Engineering and I am currently pursuing my master’s degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and exploring ML is routine. When I’m not coding, I’m either outside, traveling, cooking, playing Table Tennis, or reading a history book. I’m also passionate about startups, finance, and everything tech. I’m usually wearing a smile.</p>
-
+        <p>Welcome to my minimalist portfolio website. I'm a Computer Science graduate student at University of Southern California specializing in software engineering, machine learning, and data science. With a background in Computer Engineering with Honours in AI/ML from Mumbai University, I approach every project with creativity and technical precision.</p>
+        
+        <p>My work focuses on creating elegant solutions to complex problems through blockchain technology, machine learning, and web development. I'm passionate about developing secure systems and continuously expanding my technical knowledge.</p>
         
         <h2>Skills</h2>
         <ul class="skills-grid">
@@ -271,6 +283,7 @@
             </li>
         </ul>
         
+        <p style="margin-top: 40px;">I have experience in data analysis and software development. I've collaborated with teams to develop efficient solutions while also taking on leadership roles. Currently, I'm seeking summer 2025 internships in the field of computer science.</p>
         
         <div class="contact-icons">
             <a href="mailto:verulkar@usc.edu" class="contact-icon">
@@ -313,7 +326,7 @@
         <div class="research-item">
             <h3>Intellihealth: Intelligent Health Record System</h3>
             <div class="research-meta">Published in IEEE ICBDS, October 2024</div>
-            <p>Researched a blockchain-based decentralized EHR system with role-based access control, integrating a patient-assisting chatbot and ML models with 95%+ accuracy for preliminary disease detection from medical imaging.</p>
+            <p>Researched a blockchain-based decentralized EHR system with role-based access control, integrating a patient-assisting chatbot and ML models with 95%+ accuracy for preliminary disease detection from medical imaging. <a href="https://ieeexplore.ieee.org/document/10837083" class="link" target="_blank">View Paper</a></p>
         </div>
     </div>
     
@@ -321,7 +334,7 @@
         <h1>Projects</h1>
         <p>Below are some selected projects that showcase my skills and expertise.</p>
         
-        <ul class="projects-list" style="margin-left: 25px; margin-top: 30px; max-width: 800px;">
+        <ul class="projects-list">
             <li>
                 <h3>
                     Intellihealth: Intelligent Health Record System

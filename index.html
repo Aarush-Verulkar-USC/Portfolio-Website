@@ -250,7 +250,7 @@ li {
             |
             <A HREF="#contact" CLASS="nav" data-page="contact">Contact</A>
             |
-            <A HREF="resume.pdf" CLASS="nav" style="color: #ffcc00;" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">Resume PDF</A>
+            <A HREF="#resume" CLASS="nav" data-page="resume" style="color: #ffcc00;">Resume</A>
             ]
         </div>
     </DIV>
@@ -408,6 +408,29 @@ li {
             </DIV>
         </DIV>
         
+        <!-- Resume section (embedded PDF viewer) -->
+        <DIV id="resume" class="content">
+            <DIV class="vert-flexbox-L3-top-paragraph">
+                <DIV class="page-title">Resume</DIV>
+                <DIV class="top-paragraph">
+                    <DIV class="top-paragraph-item">
+                        <DIV class="paragraph">
+                            View my full resume below or <a href="resume.pdf" download style="color: #d41c94; font-weight: bold;">download the PDF</a>.
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+            
+            <DIV class="section-header">
+                Resume Preview
+            </DIV>
+            <DIV class="misc-section-content">
+                <div style="width: 100%; height: 800px; margin: 20px 0;">
+                    <iframe src="resume.pdf" style="width: 100%; height: 100%; border: 1px solid #ddd;"></iframe>
+                </div>
+            </DIV>
+        </DIV>
+        
         <!-- Contact section (kept separate) -->
         <DIV id="contact" class="content">
             <DIV class="vert-flexbox-L3-top-paragraph">
@@ -461,6 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentSections = document.querySelectorAll('.content');
     
     // Function to show active content section
+    // Add 'resume' to the supported pages
     function showContent(pageId) {
         // Hide all content sections
         contentSections.forEach(section => {

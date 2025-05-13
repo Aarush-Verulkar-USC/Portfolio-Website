@@ -1,425 +1,503 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Aarush Verulkar - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="images/tab.png">
-    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #121212;
-            color: #a6adc8;
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.6;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Times New Roman', Times, serif;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-top: 20px;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            margin-top: 40px;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            max-width: 100%;
-            text-align: justify;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        nav {
-            display: flex;
-            margin-bottom: 30px;
-            padding: 8px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            margin-top: 10px;
-            width: fit-content;
-            background-color: transparent;
-        }
-        
-        nav a {
-            margin-right: 15px;
-            color: #a6adc8;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        nav a:hover {
-            color: white;
-        }
-        
-        nav a.active {
-            color: white;
-            background-color: #1a1a1a;
-        }
-        
-        .content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .content.active {
-            display: block;
-            opacity: 1;
-        }
-        
-        .projects-list li {
-            position: relative;
-            padding-left: 5px;
-            margin-bottom: 25px;
-            list-style-type: disc;
-            color: #a6adc8;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .projects-list li h3 {
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-            font-family: 'Times New Roman', Times, serif;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #a6adc8;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            margin-left: 10px;
-        }
-        
-        .project-link:hover {
-            transform: translateY(-2px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .projects-list {
-            margin-left: 25px;
-            margin-top: 30px;
-            max-width: 100%;
-        }
-        
-        .skills-grid {
-            display: block;
-            margin-top: 25px;
-            margin-bottom: 40px;
-            max-width: 100%;
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        
-        .skill-category {
-            margin-bottom: 15px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .skill-category h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            font-family: 'Times New Roman', Times, serif;
-            display: inline;
-            font-weight: normal;
-        }
-        
-        .skill-content {
-            display: inline;
-            color: #a6adc8;
-            font-family: 'Times New Roman', Times, serif;
-            margin-left: 10px;
-        }
-        
-        .contact-icons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .contact-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #2b2b40;
-            color: #a6adc8;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .contact-icon:hover {
-            transform: translateY(-3px);
-            background-color: #34344e;
-        }
-        
-        .research-item {
-            margin-bottom: 40px;
-            max-width: 100%;
-        }
-        
-        .projects-list li p {
-            text-align: justify;
-        }
-        
-        .research-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .research-meta {
-            font-size: 0.9rem;
-            color: rgba(166, 173, 200, 0.7);
-            margin-bottom: 15px;
-            font-family: 'Times New Roman', Times, serif;
-        }
+<!DOCTYPE HTML>
+<HTML LANG="en">
+<HEAD>
+<TITLE>Aarush Verulkar - Portfolio</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; CHARSET=utf-8">
+<STYLE type="text/css">
+/* Set the body background to grey */
+body {
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 20px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
 
-        .link {
-            color: #a6adc8;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .link:hover {
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="#home" class="nav-link active" data-page="home">Home</a>
-        <a href="#research" class="nav-link" data-page="research">Research</a>
-        <a href="#projects" class="nav-link" data-page="projects">Projects</a>
-    </nav>
-    
-    <div id="home" class="content active">
-        <h1>Hello, I'm Aarush Verulkar</h1>
-        <p>I'm a goal-oriented student with experience in Machine Learning, Blockchain, and Full Stack Development. I've worked for startups and enterprises, and enjoy writing new code as well as contributing to open-source projects. I'm optimistic and business-minded, and consider collaboration and communication strong suits. I graduated from Mumbai University with a bachelor's in Computer Engineering and I am currently pursuing my master's degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and exploring ML is routine. When I'm not coding, I'm either outside, traveling, cooking, playing Table Tennis, or reading a history book. I'm also passionate about startups, finance, and everything tech. I'm usually wearing a smile.</p>
-                
-        <h2>Skills</h2>
-        <ul class="skills-grid">
-            <li class="skill-category">
-                <h3>Programming Languages:</h3>
-                <span class="skill-content">Python, Java, C, SQL, R, Solidity, Prolog</span>
-            </li>
-            <li class="skill-category">
-                <h3>Web Technologies:</h3>
-                <span class="skill-content">HTML, CSS, JavaScript, ReactJS, Django, MongoDB, PostgreSQL, MySQL</span>
-            </li>
-            <li class="skill-category">
-                <h3>ML and DS:</h3>
-                <span class="skill-content">NumPy, Pandas, PyTorch, Matplotlib, Seaborn, Keras, TensorFlow, Scikit-Learn, SciPy, OpenCV</span>
-            </li>
-            <li class="skill-category">
-                <h3>Other Technologies:</h3>
-                <span class="skill-content">Tableau, Excel, MS Suite, Git, Hadoop, AWS, Docker</span>
-            </li>
-        </ul>
-        
-        <p style="margin-top: 40px;">I have experience in data analysis and software development. I've collaborated with teams to develop efficient solutions while also taking on leadership roles. Currently, I'm seeking summer 2025 internships in the field of computer science.</p>
-        
-        <div class="contact-icons">
-            <a href="mailto:verulkar@usc.edu" class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-            </a>
-            
-            <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                    <rect width="4" height="12" x="2" y="9"/>
-                    <circle cx="4" cy="4" r="2"/>
-                </svg>
-            </a>
-            
-            <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                    <path d="M9 18c-4.51 2-5-2-7-2"/>
-                </svg>
-            </a>
-            
-            <a href="#" target="_blank" class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 1 12 24c-2.796 0-5.487-.46-8-1.308"/>
-                    <path d="M12 14l-6.16-3.422a12.083 12.083 0 0 0-.665 6.479A11.952 11.952 0 0 0 12 24c2.796 0 5.487-.46 8-1.308"/>
-                    <circle cx="12" cy="8" r="7"/>
-                    <circle cx="12" cy="8" r="3"/>
-                </svg>
-            </a>
+/* Main container with white background */
+.vert-flexbox-L1-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1000px; /* Fixed width */
+    margin: 0 auto; /* Center the container */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hori-flexbox-L2-banner-top {
+    display: flex;
+    background-color: #990000;
+    color: white;
+    padding: 10px 15px;
+}
+
+.vert-flexbox-L3-banner-top-dept-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-top-dept-name-first {
+    font-size: 16px;
+}
+
+.banner-top-dept-name-last {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.banner-top-middle-space {
+    flex-grow: 1;
+}
+
+/* Navigation bar styling */
+.hori-flexbox-L2-navbar {
+    display: flex;
+    background-color: #990000;
+    color: white;
+    padding: 5px 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.navbar-paragraph {
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.hori-navbar-right-item {
+    text-align: right;
+}
+
+/* Content styling */
+.vert-flexbox-L2-page-content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.vert-flexbox-L3-top-paragraph {
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.top-paragraph {
+    display: flex;
+}
+
+.top-paragraph-item {
+    display: flex;
+}
+
+.paragraph {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Section styling */
+.section-header {
+    background-color: #a9a9a9;
+    padding: 5px 10px;
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+}
+
+.vert-flexbox-L3-section-content-general-information, 
+.vert-flexbox-L3-section-content-course-resource,
+.misc-section-content {
+    padding: 0 15px;
+}
+
+/* Table styling for general information */
+.vert-flexbox-L4-section-content-general-information-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hori-flexbox-L5-section-content-general-information-row {
+    display: flex;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-content-general-information-left-item {
+    width: 150px;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.section-content-general-information-spanned-item,
+.section-content-general-information-leftjustified-item,
+.section-content-general-information-centered-item {
+    flex-grow: 1;
+}
+
+.section-content-general-information-centered-item {
+    text-align: center;
+}
+
+/* Resource table styling */
+.vert-flexbox-L4-section-content-course-resource-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hori-flexbox-L5-section-content-course-resource-row {
+    display: flex;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-content-course-resource-left-item {
+    width: 150px;
+}
+
+.section-content-course-resource-single-char-centered-item {
+    width: 20px;
+    text-align: center;
+}
+
+.section-content-course-resource-leftjustified-item {
+    flex-grow: 1;
+}
+
+/* News section */
+.news-section-header {
+    background-color: #990000;
+    color: white;
+    padding: 5px 10px;
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+}
+
+/* Link styling */
+a {
+    color: #990000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.nav, .dept-of, .dept-name {
+    color: white;
+}
+
+/* Utility classes */
+.boldred {
+    color: #990000;
+    font-weight: bold;
+}
+
+/* Lists */
+ul {
+    margin-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Project section */
+.projects-list {
+    margin: 15px 0;
+}
+
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Content tabs */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV class="vert-flexbox-L1-main-container">
+    <div class="hori-flexbox-L2-banner-top">
+        <div class="vert-flexbox-L3-banner-top-dept-name">
+            <div class="banner-top-dept-name-first"><A HREF="#" CLASS="dept-of">Portfolio</A></div>
+            <div class="banner-top-dept-name-last"><A HREF="#" CLASS="dept-name"></A></div>
         </div>
+        <div class="banner-top-middle-space">&nbsp;</div>
     </div>
     
-    <div id="research" class="content">
-        <h1>Research</h1>
-        <p>My research focuses on blockchain technology and healthcare systems. Here are my publications and research work.</p>
-        
-        <div class="research-item">
-            <h3>Intellihealth: Intelligent Health Record System</h3>
-            <div class="research-meta">Published in IEEE ICBDS, October 2024</div>
-            <p>Researched a blockchain-based decentralized EHR system with role-based access control, integrating a patient-assisting chatbot and ML models with 95%+ accuracy for preliminary disease detection from medical imaging. <a href="https://ieeexplore.ieee.org/document/10837083" class="link" target="_blank">View Paper</a></p>
+    <DIV class="hori-flexbox-L2-navbar">
+        <DIV class="navbar-paragraph">
+            &nbsp;
+        </DIV>
+        <div class="hori-navbar-right-item">
+            [
+            <A HREF="#home" CLASS="nav" data-page="home">Home</A>
+            |
+            <A HREF="#research" CLASS="nav" data-page="research">Research</A>
+            |
+            <A HREF="#projects" CLASS="nav" data-page="projects">Projects</A>
+            |
+            <A HREF="#contact" CLASS="nav" data-page="contact">Contact</A>
+            ]
         </div>
-    </div>
+    </DIV>
     
-    <div id="projects" class="content">
-        <h1>Projects</h1>
-        <p>Below are some selected projects that showcase my skills and expertise.</p>
+    <DIV class="vert-flexbox-L2-page-content">
+        <!-- Home section -->
+        <DIV id="home" class="content active">
+            <div style="font-size: 28px; margin: 15px 0 25px 0; font-weight: normal;">Aarush Verulkar</div>
+            <DIV class="section-header">
+                About Me
+            </DIV>
+            <DIV class="vert-flexbox-L3-top-paragraph">
+                <DIV class="top-paragraph">
+                    <DIV class="top-paragraph-item">
+                        <DIV class="paragraph">
+                            <P>
+                            I'm a goal-oriented student with experience in Machine Learning, Blockchain, and Full Stack Development. I've worked for startups and enterprises, and enjoy writing new code as well as contributing to open-source projects. I'm optimistic and business-minded, and consider collaboration and communication strong suits.
+                            </P>
+                            <P>
+                            I graduated from Mumbai University with a bachelor's in Computer Engineering and I am currently pursuing my master's degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and exploring ML is routine. When I'm not coding, I'm either outside, traveling, cooking, playing Table Tennis, or reading a history book. I'm also passionate about startups, finance, and everything tech. I'm usually wearing a smile.
+                            </P>
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+            
+            <!-- Skills section (moved to homepage) -->
+            <DIV class="section-header">
+                Technical Skills
+            </DIV>
+            <DIV class="misc-section-content">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="width: 150px; padding: 5px; vertical-align: top; text-align: right;"><B>Programming Languages:</B></td>
+                        <td style="padding: 5px;">Python, Java, C, SQL, R, Solidity, Prolog</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; padding: 5px; vertical-align: top; text-align: right;"><B>Web Technologies:</B></td>
+                        <td style="padding: 5px;">HTML, CSS, JavaScript, ReactJS, Django, MongoDB, PostgreSQL, MySQL</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; padding: 5px; vertical-align: top; text-align: right;"><B>ML and DS:</B></td>
+                        <td style="padding: 5px;">NumPy, Pandas, PyTorch, Matplotlib, Seaborn, Keras, TensorFlow, Scikit-Learn, SciPy, OpenCV</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 150px; padding: 5px; vertical-align: top; text-align: right;"><B>Other Technologies:</B></td>
+                        <td style="padding: 5px;">Tableau, Excel, MS Suite, Git, Hadoop, AWS, Docker</td>
+                    </tr>
+                </table>
+            </DIV>
+            
+            <!-- Educational background (moved below skills) -->
+            <DIV class="section-header">
+                Educational Background
+            </DIV>
+            <DIV class="misc-section-content">
+                <UL>
+                    <LI><B>Master of Science, Computer Science</B><BR>
+                        University of Southern California, Viterbi School of Engineering<BR>
+                        <I>Expected May 2026</I><BR>
+                        Relevant Coursework: Operating Systems, Advanced Machine Learning, Analysis of Algorithms, Database Systems
+                    </LI>
+                    <LI><B>Bachelor of Engineering, Computer Engineering (Honours in AI/ML)</B><BR>
+                        Mumbai University, Department of Computer Engineering<BR>
+                        <I>August 2020 - July 2024</I><BR>
+                        CGPA: 9.21/10<BR>
+                        Relevant Coursework: Data Structures, Computer Networks, Distributed Systems, Artificial Intelligence, Machine Learning, Deep Learning, Blockchain Technology
+                    </LI>
+                </UL>
+            </DIV>
+        </DIV>
         
-        <ul class="projects-list">
-            <li>
-                <h3>
-                    Intellihealth: Intelligent Health Record System
-                    <a href="https://github.com/Aarush-Verulkar-USC/Intellihealth" class="project-link" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </h3>
-                <p>Created a Blockchain driven Electronic Health Record System, ensuring secure digital storage of medical documents and enhancing patient data accessibility by reducing retrieval time to under 2 seconds per document. Prepared secure smart contracts utilizing Solidity alongside industry-standard frameworks like Truffle and Ganache, resulting in a notable 40% improvement to the integrity of digital health records stored on-chain.</p>
-            </li>
+        <!-- Research section -->
+        <DIV id="research" class="content">
+            <DIV class="vert-flexbox-L3-top-paragraph">
+                <DIV class="page-title">Research</DIV>
+                <DIV class="top-paragraph">
+                    <DIV class="top-paragraph-item">
+                        <DIV class="paragraph">
+                            My research focuses on blockchain technology and healthcare systems. Here are my publications and research work.
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
             
-            <li>
-                <h3>
-                    Continual Learning: Mitigating Catastrophic Forgetting
-                    <a href="https://github.com/Aarush-Verulkar-USC/Continual-Learning" class="project-link" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </h3>
-                <p>Teamed up to conduct a thorough comparative analysis of Continual Learning techniques, concentrating on EWC, Experience Replay and GEM; mitigated catastrophic forgetting while enhancing image classification accuracy by 15% across MNIST dataset. Established benchmarks for performance on MNIST and collated model performance metrics, achieving a 93%+ test accuracy in joint training across contexts.</p>
-            </li>
+            <DIV class="section-header">
+                Publications
+            </DIV>
+            <DIV class="vert-flexbox-L3-section-content-general-information">
+                <DIV class="paragraph">&nbsp;</DIV>
+                <DIV class="vert-flexbox-L4-section-content-general-information-table">
+                    <DIV class="hori-flexbox-L5-section-content-general-information-row">
+                        <DIV class="section-content-general-information-left-item"><B>IEEE ICBDS, 2024</B></DIV>
+                        <DIV class="section-content-general-information-spanned-item">
+                            <span class="project-title">Intellihealth: Intelligent Health Record System</span><BR>
+                            Researched a blockchain-based decentralized EHR system with role-based access control, integrating a patient-assisting chatbot and ML models with 95%+ accuracy for preliminary disease detection from medical imaging. <A HREF="https://ieeexplore.ieee.org/document/10837083" target="_blank">View Paper</A>
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+        </DIV>
+        
+        <!-- Projects section -->
+        <DIV id="projects" class="content">
+            <DIV class="vert-flexbox-L3-top-paragraph">
+                <DIV class="page-title">Projects</DIV>
+                <DIV class="top-paragraph">
+                    <DIV class="top-paragraph-item">
+                        <DIV class="paragraph">
+                            Below are some selected projects that showcase my skills and expertise.
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
             
-            <li>
-                <h3>
-                    ConveCam
-                    <a href="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" class="project-link" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </h3>
-                <p>Collaborated with a team to design and implement a smart conveyor belt system using YOLOv4 algorithm via Darknet framework, achieving 96% accuracy in real-time object detection and classification based on visual attributes. Integrated the system into a miniature supply-chain industry model, improving processing efficiency by 40% and reducing classification errors by 25% compared to initial benchmarks.</p>
-            </li>
+            <DIV class="section-header">
+                Project List
+            </DIV>
+            <DIV class="misc-section-content">
+                <DIV class="projects-list">
+                    <DIV class="project-item">
+                        <DIV class="project-title">Intellihealth: Intelligent Health Record System</DIV>
+                        <DIV class="paragraph">
+                            Created a Blockchain driven Electronic Health Record System, ensuring secure digital storage of medical documents and enhancing patient data accessibility by reducing retrieval time to under 2 seconds per document. Prepared secure smart contracts utilizing Solidity alongside industry-standard frameworks like Truffle and Ganache, resulting in a notable 40% improvement to the integrity of digital health records stored on-chain.
+                            <BR><A HREF="https://github.com/Aarush-Verulkar-USC/Intellihealth" target="_blank">View on GitHub</A>
+                        </DIV>
+                    </DIV>
+                    
+                    <DIV class="project-item">
+                        <DIV class="project-title">Continual Learning: Mitigating Catastrophic Forgetting</DIV>
+                        <DIV class="paragraph">
+                            Teamed up to conduct a thorough comparative analysis of Continual Learning techniques, concentrating on EWC, Experience Replay and GEM; mitigated catastrophic forgetting while enhancing image classification accuracy by 15% across MNIST dataset. Established benchmarks for performance on MNIST and collated model performance metrics, achieving a 93%+ test accuracy in joint training across contexts.
+                            <BR><A HREF="https://github.com/Aarush-Verulkar-USC/Continual-Learning" target="_blank">View on GitHub</A>
+                        </DIV>
+                    </DIV>
+                    
+                    <DIV class="project-item">
+                        <DIV class="project-title">ConveCam</DIV>
+                        <DIV class="paragraph">
+                            Collaborated with a team to design and implement a smart conveyor belt system using YOLOv4 algorithm via Darknet framework, achieving 96% accuracy in real-time object detection and classification based on visual attributes. Integrated the system into a miniature supply-chain industry model, improving processing efficiency by 40% and reducing classification errors by 25% compared to initial benchmarks.
+                            <BR><A HREF="https://github.com/Aarush-Verulkar-USC/Deep-Learning-Based-Conveyor-Belt-System" target="_blank">View on GitHub</A>
+                        </DIV>
+                    </DIV>
+                    
+                    <DIV class="project-item">
+                        <DIV class="project-title">BlogLang</DIV>
+                        <DIV class="paragraph">
+                            Architected and deployed a full stack dual functionality web application incorporating a comprehensive blog platform with a secure admin interface for content creators. Engineered an intuitive language translation service that processes text across multiple languages.
+                            <BR><A HREF="https://github.com/Aarush-Verulkar-USC/To-Do-List" target="_blank">View on GitHub</A>
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+        </DIV>
+        
+        <!-- Contact section (kept separate) -->
+        <DIV id="contact" class="content">
+            <DIV class="vert-flexbox-L3-top-paragraph">
+                <DIV class="page-title">Contact Information</DIV>
+                <DIV class="top-paragraph">
+                    <DIV class="top-paragraph-item">
+                        <DIV class="paragraph">
+                            Feel free to reach out to me through any of the following channels:
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
             
-            <li>
-                <h3>
-                    BlogLang
-                    <a href="https://github.com/Aarush-Verulkar-USC/To-Do-List" class="project-link" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </h3>
-                <p>Architected and deployed a full stack dual functionality web application incorporating a comprehensive blog platform with a secure admin interface for content creators. Engineered an intuitive language translation service that processes text across multiple languages.</p>
-            </li>
-        </ul>
-    </div>
+            <DIV class="section-header">
+                Contact Details
+            </DIV>
+            <DIV class="vert-flexbox-L3-section-content-general-information">
+                <DIV class="paragraph">&nbsp;</DIV>
+                <DIV class="vert-flexbox-L4-section-content-general-information-table">
+                    <DIV class="hori-flexbox-L5-section-content-general-information-row">
+                        <DIV class="section-content-general-information-left-item"><B>Email</B></DIV>
+                        <DIV class="section-content-general-information-leftjustified-item">
+                            <A HREF="mailto:verulkar@usc.edu">verulkar@usc.edu</A>
+                        </DIV>
+                    </DIV>
+                    
+                    <DIV class="hori-flexbox-L5-section-content-general-information-row">
+                        <DIV class="section-content-general-information-left-item"><B>LinkedIn</B></DIV>
+                        <DIV class="section-content-general-information-leftjustified-item">
+                            <A HREF="https://linkedin.com/in/aarush-verulkar" target="_blank">linkedin.com/in/aarush-verulkar</A>
+                        </DIV>
+                    </DIV>
+                    
+                    <DIV class="hori-flexbox-L5-section-content-general-information-row">
+                        <DIV class="section-content-general-information-left-item"><B>GitHub</B></DIV>
+                        <DIV class="section-content-general-information-leftjustified-item">
+                            <A HREF="https://github.com/aarush-verulkar-usc" target="_blank">github.com/aarush-verulkar-usc</A>
+                        </DIV>
+                    </DIV>
+                </DIV>
+            </DIV>
+        </DIV>
+    </DIV>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const contentSections = document.querySelectorAll('.content');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Update active nav link
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    link.classList.add('active');
-                    
-                    // Show corresponding content without scrolling
-                    const targetPage = link.getAttribute('data-page');
-                    contentSections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === targetPage) {
-                            section.classList.add('active');
-                        }
-                    });
-                    
-                    // Update URL hash without scrolling
-                    history.pushState(null, null, `#${targetPage}`);
-                });
-            });
-            
-            // Handle direct URL access with hash
-            const handleHashChange = () => {
-                const hash = window.location.hash.substring(1) || 'home';
-                const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
-                if (targetLink) {
-                    navLinks.forEach(item => item.classList.remove('active'));
-                    targetLink.classList.add('active');
-                    
-                    contentSections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === hash) {
-                            section.classList.add('active');
-                        }
-                    });
-                }
-            };
-            
-            // Prevent default hash behavior that causes scrolling
-            window.addEventListener('hashchange', (e) => {
-                e.preventDefault();
-                handleHashChange();
-            });
-            
-            // Initial load
-            handleHashChange();
+    <!-- Removed footer/bottom navigation -->
+</DIV>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav');
+    const contentSections = document.querySelectorAll('.content');
+    
+    // Function to show active content section
+    function showContent(pageId) {
+        // Hide all content sections
+        contentSections.forEach(section => {
+            section.classList.remove('active');
         });
-    </script>
-</body>
-</html>
+        
+        // Show the selected content section
+        const activeContent = document.getElementById(pageId);
+        if (activeContent) {
+            activeContent.classList.add('active');
+        }
+    }
+    
+    // Add click event to all navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the page ID from data attribute
+            const pageId = this.getAttribute('data-page');
+            
+            // Update URL hash
+            window.location.hash = pageId;
+            
+            // Show the corresponding content
+            showContent(pageId);
+        });
+    });
+    
+    // Handle direct URL access with hash
+    function handleHashChange() {
+        const hash = window.location.hash.substring(1) || 'home';
+        showContent(hash);
+    }
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Initial load
+    handleHashChange();
+});
+</script>
+</BODY>
+</HTML>

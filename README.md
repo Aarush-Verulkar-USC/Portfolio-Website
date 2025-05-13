@@ -1,80 +1,61 @@
-# Terminal Portfolio
+# Portfolio Website
 
-A modern, interactive terminal-styled portfolio website showcasing my work and skills as a developer.
+This is a personal portfolio website inspired by the USC Operating Systems course website design.
 
-![Terminal Portfolio Screenshot](images/portfolio.png)
+## Overview
 
-## 🚀 Features
+This portfolio showcases my education, skills, research, and projects in a simple, academic-styled website inspired by the [USC CS402 Operating Systems course website](https://merlot.usc.edu/cs402-s25/index.html).
 
-- **Terminal-like Interface**: Navigate through my portfolio using familiar command-line syntax
-- **Interactive Experience**: Type commands to discover projects, skills, and contact information
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Custom Commands**: Easily extensible with new commands and features
-- **Easter Eggs**: Hidden commands and features for the curious explorer
+## Features
 
-## 🛠️ Tech Stack
+- Clean, academic-style design with gray box surrounding the content
+- Responsive navigation with sections for Home, Research, Projects, and Contact
+- Color-highlighted important elements
+- Simple, easy-to-navigate structure
 
-- HTML5, CSS3, JavaScript
-- No external UI libraries - built from scratch
-- Web Storage API for persistence
-- Custom terminal parser and command handler
+## Sections
 
-## 💻 Commands
+### Home
+Contains a brief introduction, technical skills table, and educational background.
 
-| Command | Description |
-|---------|-------------|
-| `help` | List all available commands |
-| `about` | Display information about me |
-| `skills` | Show my technical skills |
-| `projects` | List my projects |
-| `contact` | Display contact information |
-| `clear` | Clear the terminal |
+### Research
+Showcases my research publication at IEEE ICBDS on blockchain-based healthcare systems.
 
-## 🔧 Installation
+### Projects
+Displays key projects including:
+- Intellihealth: Blockchain-driven Electronic Health Record System
+- Continual Learning: Mitigating Catastrophic Forgetting
+- ConveCam: Smart conveyor belt system using YOLOv4
+- BlogLang: Full stack web application with translation functionality
+
+### Contact
+Contact information including email, LinkedIn, and GitHub links.
+
+## Design Notes
+
+This website intentionally mimics the style of the USC Operating Systems course website with:
+- Red navigation bar
+- Gray section headers
+- White content on gray background
+- Clean, tabular data presentation
+- Minimal design focused on content readability
+
+## Technical Implementation
+
+- Pure HTML, CSS, and JavaScript
+- No external frameworks or libraries
+- Tab-based navigation using JavaScript for content switching
+
+## Setup and Deployment
 
 1. Clone this repository
-```bash
-git@github.com:Aarush-Verulkar-USC/Portfolio-Website.git
-```
+2. Update the content with your personal information
+3. Deploy to GitHub Pages or any web hosting service
 
-2. Navigate to the project directory
-```bash
-cd terminal-portfolio
-```
+## Inspiration
 
-3. Open `index.html` in your browser or use a local server
-```bash
-# If you have Python installed
-python -m http.server
-# Or using Node.js
-npx serve
-```
+Design inspired by the [USC CS402 Operating Systems course website](https://merlot.usc.edu/cs402-s25/index.html).
 
-## 🖥️ Development
+## Contact
 
-To modify or extend this project:
-
-1. Edit the command handlers in `js/commands.js`
-2. Modify styles in `css/style.css`
-3. Update project data in `js/data.js`
-
-## 📱 Accessibility
-
-- Full keyboard navigation
-- Screen reader friendly with ARIA labels
-- High contrast mode available via `theme highcontrast`
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by retro terminal interfaces
-- Font: [Geist Mono]([https://www.jetbrains.com/lp/mono/](https://vercel.com/font))
-
----
-
-Made with ❤️ by [Aarush]
-
-*Type `help` in the terminal to get started!*
+Feel free to reach out through the contact information provided on the website.

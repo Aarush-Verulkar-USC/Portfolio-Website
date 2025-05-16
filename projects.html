@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarush Verulkar - Projects</title>
+    <!-- Import Geist Sans font -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/geist/1.0.0/geist-sans.min.css" rel="stylesheet">
+    <!-- Import Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Geist Sans', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0077b6;
+        }
+        
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            padding-bottom: 5px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: #0077b6;
+            border-bottom: 2px solid #0077b6;
+        }
+        
+        .home-icon {
+            margin-right: 5px;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        
+        .projects-intro {
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+        
+        /* Project styles */
+        .project-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            max-width: 900px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .project-card h2 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: #333;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .github-link {
+            color: #333;
+            font-size: 22px;
+            transition: color 0.2s;
+        }
+        
+        .github-link:hover {
+            color: #0077b6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            background: #e0f0ff;
+            color: #0077b6;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+        }
+        
+        .project-highlights {
+            list-style-type: none;
+        }
+        
+        .project-highlights li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .project-highlights li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0077b6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house home-icon"></i>Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="./publications.html">Publications</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main content -->
+    <div class="main-content">
+        <h1>Projects</h1>
+        
+        <div class="projects-intro">
+            <p>Here are some of the key projects I've worked on, showcasing my skills in software development, AI/ML, blockchain technology, and full-stack web development.</p>
+        </div>
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>Intellihealth: Intelligent Health Record System</h2>
+                <div class="project-links">
+                    <a href="https://github.com/aarushverulkar/intellihealth" class="github-link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Angular</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">ExpressJS</span>
+                <span class="tech-tag">NodeJS</span>
+                <span class="tech-tag">Django</span>
+            </div>
+            <div class="project-description">
+                <p>A blockchain-based electronic health record system that securely stores medical documents and provides fast access to patient data.</p>
+            </div>
+            <ul class="project-highlights">
+                <li>Created a Blockchain driven Electronic Health Record System, ensuring secure digital storage of medical documents and enhancing patient data accessibility by reducing retrieval time to under 2 seconds per document.</li>
+                <li>Prepared secure smart contracts utilizing Solidity alongside industry-standard frameworks like Truffle and Ganache, resulting in a notable 40% improvement to the integrity of digital health records stored on-chain.</li>
+            </ul>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>Continual Learning: Mitigating Catastrophic Forgetting</h2>
+                <div class="project-links">
+                    <a href="https://github.com/aarushverulkar/continual-learning" class="github-link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Avalanche</span>
+                <span class="tech-tag">PyTorch</span>
+            </div>
+            <div class="project-description">
+                <p>A research project focused on improving continual learning in neural networks by reducing catastrophic forgetting.</p>
+            </div>
+            <ul class="project-highlights">
+                <li>Teamed up to conduct a thorough comparative analysis of Continual Learning techniques, concentrating on EWC, Experience Replay and GEM; mitigated catastrophic forgetting while enhancing image classification accuracy by 15% across MNIST dataset.</li>
+                <li>Established benchmarks for performance on MNIST and collated model performance metrics, achieving a 93%+ test accuracy in joint training across contexts.</li>
+            </ul>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>ConveCam</h2>
+                <div class="project-links">
+                    <a href="https://github.com/aarushverulkar/convecam" class="github-link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">Darknet</span>
+            </div>
+            <div class="project-description">
+                <p>A smart conveyor belt system using computer vision and deep learning for real-time object detection and classification.</p>
+            </div>
+            <ul class="project-highlights">
+                <li>Collaborated with a team to design and implement a smart conveyor belt system using YOLOv4 algorithm via Darknet framework, achieving 96% accuracy in real-time object detection and classification based on visual attributes.</li>
+                <li>Integrated the system into a miniature supply-chain industry model, improving processing efficiency by 40% and reducing classification errors by 25% compared to initial benchmarks.</li>
+            </ul>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card">
+            <div class="project-header">
+                <h2>BlogLang</h2>
+                <div class="project-links">
+                    <a href="https://github.com/aarushverulkar/bloglang" class="github-link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">ReactJS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">DBSqlite3</span>
+            </div>
+            <div class="project-description">
+                <p>A full-stack web application featuring a blog platform with admin interface and multilingual translation capabilities.</p>
+            </div>
+            <ul class="project-highlights">
+                <li>Architected and deployed a full stack dual functionality web application incorporating a comprehensive blog platform with a secure admin interface for content creators.</li>
+                <li>Engineered an intuitive language translation service that processes text across multiple languages.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

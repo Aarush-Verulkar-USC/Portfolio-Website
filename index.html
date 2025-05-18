@@ -45,11 +45,20 @@
         /* Header styles */
         /* ADD THIS - Force header to extend full width */
         header {
+            
             position: sticky;
-            width: 100vw; /* Use viewport width */
+            top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
             background-color: #fcfcfc;
-            padding: 15px 0;
+            padding: 15px 20px; /* Add horizontal padding here */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1240px; /* 1200px + 20px padding on each side */
+            margin: 0 auto;
+
         }
         
         .site-logo {

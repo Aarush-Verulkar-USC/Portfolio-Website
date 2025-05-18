@@ -48,13 +48,26 @@
             margin-bottom: 40px;
             
             /* Add these properties to make it sticky */
+            width: 100%;
+            left: 0;
+            right: 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #fcfcfc; /* Same as body background */
+            background-color: #fcfcfc; /* Same axs body background */
             padding: 15px 0; /* You can reduce padding for the sticky header */
-/*             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Optional: adds a subtle shadow */ */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Optional: adds a subtle shadow */
             backdrop-filter: blur(5px); /* Optional: creates a nice blur effect */
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .site-logo {
@@ -601,18 +614,20 @@
 <body>
     <!-- Header with navigation -->
     <header>
-        <div class="site-logo">Aarush Verulkar</div>
-        <nav>
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="site-logo">Aarush Verulkar</div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>  
     </header>
     
     <!-- Hero section - with side-by-side layout like reference -->

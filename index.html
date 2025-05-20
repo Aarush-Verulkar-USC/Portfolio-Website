@@ -552,10 +552,33 @@
             font-family: 'Space Grotesk', sans-serif;
         }
         
-        .social-links-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        /* Social links in a row */
+        .social-links-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            font-size: 28px;
+            color: #8054dc;
+            transition: all 0.2s;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #f9fafb;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: #6842b0;
+            background-color: #f3f4f6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
         
         .social-link-item {
@@ -859,47 +882,38 @@
     
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+            <!-- Email contact -->
+            <div class="email-contact">
+                <a href="mailto:verulkar@usc.edu" class="email-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>verulkar@usc.edu</span>
+                </a>
+            </div>
             
-            <div class="contact-wrapper">
-                <!-- Email contact -->
-                <div class="email-contact">
-                    <a href="mailto:verulkar@usc.edu" class="email-link">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>verulkar@usc.edu</span>
+            <!-- Social links in a single row -->
+            <div class="social-links-container">
+                <h3>Connect with ME</h3>
+                <div class="social-links-row">
+                    <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-linkedin"></i>
                     </a>
-                </div>
-                
-                <!-- Social links -->
-                <div class="social-links-container">
-                    <h3>Connect with ME</h3>
-                    
-                    <div class="social-links-grid">
-                        <a href="https://linkedin.com/in/aarush-verulkar" target="_blank" class="social-link-item">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        
-                        <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="social-link-item">
-                            <i class="fa-brands fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        
-                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=vehZU50AAAAJ" target="_blank" class="social-link-item">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span>Google Scholar</span>
-                        </a>
-                        
-                        <a href="resume.pdf" target="_blank" class="social-link-item">
-                            <i class="fa-solid fa-file"></i>
-                            <span>Resume</span>
-                        </a>
-                    </div>
+                    <a href="https://github.com/aarush-verulkar-usc" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=vehZU50AAAAJ" target="_blank" class="social-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="social-icon">
+                        <i class="fa-solid fa-file"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <!-- Footer -->
     <footer>

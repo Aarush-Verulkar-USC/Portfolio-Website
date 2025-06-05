@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarush Verulkar - Portfolio</title>
     <link rel="icon" href="tab.png" type="image/png">
-    <!-- Inter for headings -->
+    <!-- Manrope for headings -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Inter for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Manrope for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and base styles */
@@ -16,7 +16,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             scroll-behavior: smooth;
         }
         
@@ -65,7 +65,7 @@
             font-size: 24px;
             font-weight: 600;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             letter-spacing: -0.02em;
             margin-left: 15px;
         }
@@ -81,7 +81,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             letter-spacing: -0.01em;
             padding: 8px 15px;
             border-radius: 6px;
@@ -154,15 +154,16 @@
             margin-bottom: 30px;
             font-weight: 700;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             letter-spacing: -0.02em;
         }
         
         .hero-content p {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.7;
             color: #4b5563;
             margin-bottom: 15px;
+            text-align: justify;
         }
         
         .hero-content p a {
@@ -183,7 +184,7 @@
             transition: all 0.2s;
             display: inline-flex;
             align-items: center;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .btn-primary {
@@ -225,36 +226,13 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
-        .contact-item {
-    margin-bottom: 15px;
-        }
-        
-        .contact-item a {
-            display: flex;
-            align-items: left;
-            color: #4b5563;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.2s;
-        }
-        
-        .contact-item a:hover {
-            color: #67AE6E;
-        }
-        
-        .contact-item i {
-            margin-right: 12px;
-            color: #67AE6E;
-            width: 20px;
-        }
         
         .section-title {
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 30px;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             letter-spacing: -0.02em;
         }
         
@@ -317,7 +295,7 @@
             font-size: 18px;
             margin-bottom: 5px;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .experience-company {
@@ -366,7 +344,7 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .skill-category h3 i {
@@ -426,7 +404,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .project-description {
@@ -480,7 +458,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             color: #111827;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
         }
         
         .publication-meta {
@@ -527,114 +505,187 @@
             margin-right: 6px;
         }
         
-        /* Contact section styles */
-        .contact-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
+        /* Enhanced Contact Section Styles */
+        #contact {
+            background: #fcfcfc;
+            margin: 0 -20px;
+            padding: 80px 40px;
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            margin-right: -20px;
         }
         
-        .email-contact {
-            text-align: center;
-            margin-bottom: 20px;
+        #contact .container {
+            max-width: 800px;
         }
         
-        .email-link {
-            display: inline-flex;
-            align-items: center;
-            font-size: 20px;
-            color: #4b5563;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background-color: #f3f4f6;
-            transition: all 0.2s;
+        #contact .section-title {
+            text-align: left;
+            margin-bottom: 3rem;
+            position: relative;
         }
         
-        .email-link:hover {
-            background-color: #e5e7eb;
-            color: #111827;
-        }
-        
-        .email-link i {
-            margin-right: 10px;
-            color: #67AE6E;
-        }
-        
-        .social-links-container {
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
-        
-        .social-links-container h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #111827;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Social links in a row */
-        .social-links-row {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            font-size: 28px;
-            color: #67AE6E;
-            transition: all 0.2s;
-            padding: 10px;
-            border-radius: 50%;
-            background-color: #f9fafb;
+        #contact .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
             width: 60px;
-            height: 60px;
+            height: 4px;
+            background: #67AE6E;
+            border-radius: 2px;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            transform: translateY(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-8px);
+        }
+        
+        .contact-item a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: #4a5568;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.05),
+                0 2px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-item a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #67AE6E, #328E6E);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .contact-item a:hover::before {
+            left: 0;
+            opacity: 0.05;
+        }
+        
+        .contact-item a:hover {
+            color: #2d3748;
+            box-shadow: 
+                0 12px 32px rgba(0, 0, 0, 0.12),
+                0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: rgba(103, 174, 110, 0.3);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 12px;
+            background: #67AE6E;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(103, 174, 110, 0.3);
         }
         
-        .social-icon:hover {
-            transform: translateY(-5px);
-            color: #6842b0;
-            background-color: #f3f4f6;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        .contact-item a:hover i {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(103, 174, 110, 0.4);
         }
         
-        .social-link-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9fafb;
-            transition: all 0.2s;
-        }
-        
-        .social-link-item:hover {
-            background-color: #f3f4f6;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .social-link-item i {
-            font-size: 20px;
-            margin-right: 12px;
-            color: #67AE6E;
-        }
-        
-        .social-link-item span {
-            font-size: 16px;
+        .contact-item span {
             font-weight: 500;
-            color: #4b5563;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: 'Manrope', sans-serif;
         }
         
-        @media (max-width: 600px) {
-            .social-links-grid {
+        .contact-item a:hover span {
+            font-weight: 600;
+        }
+        
+        /* Specific icon colors on hover */
+        .contact-item:nth-child(1) a:hover i {
+            background: linear-gradient(135deg, #ea4335, #fbbc04);
+        }
+        
+        .contact-item:nth-child(2) a:hover i {
+            background: #0077b5;
+        }
+        
+        .contact-item:nth-child(3) a:hover i {
+            background: linear-gradient(135deg, #24292e, #586069);
+        }
+        
+        .contact-item:nth-child(4) a:hover i {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+        }
+        
+        .contact-item:nth-child(5) a:hover i {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+        }
+        
+        /* Responsive design for contact */
+        @media (max-width: 768px) {
+            #contact {
+                margin: 0 -20px;
+                padding: 60px 20px;
+                width: calc(100% + 40px);
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            
+            .contact-wrapper {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-item a {
+                padding: 1.25rem;
+            }
+        }
+        
+        /* Subtle animation on load */
+        .contact-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .contact-item:nth-child(1) { animation-delay: 0.1s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.3s; }
+        .contact-item:nth-child(4) { animation-delay: 0.4s; }
+        .contact-item:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
         
@@ -673,7 +724,7 @@
         <div class="hero-content">
             <h1>Writing clean, efficient code and building AI solutions.</h1>
             <p>I'm a goal-oriented student with experience in Machine Learning, Blockchain, and Full Stack Development. I've worked for startups and enterprises, and enjoy writing new code as well as contributing to open-source projects. I'm optimistic and business-minded, and consider collaboration and communication strong suits.</p>
-            <p>I graduated from Mumbai University with a bachelor's in Computer Engineering and I am currently pursuing my master's degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and exploring ML is routine. When I'm not coding, I'm either outside, traveling, cooking, playing Table Tennis, or reading a history book. I'm also passionate about startups, finance, and everything tech. I'm usually wearing a smile.</p>
+            <p>I graduated from Mumbai University with a bachelor's in Computer Engineering and I am currently pursuing my master's degree in Computer Science at USC. I try to keep up with data structures and algorithms in my free time, and routinely explore ML. When I'm not coding, I'm either outside, traveling, cooking, playing Table Tennis, or reading a history book. I'm also passionate about startups, F1, anime and everything tech. I'm usually wearing a smile.</p>
             
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Get in touch</a>
@@ -704,7 +755,7 @@
             
             <div class="experience-item">
                 <span class="experience-date">June 2023 - July 2023</span>
-                <h3 class="experience-role">Data Analyst Intern</h3>
+                <h3 class="experience-role">Data Analyst Manropen</h3>
                 <p class="experience-company">Bulk Material Handling Technologies</p>
                 <div class="experience-description">
                     <ul>
@@ -915,51 +966,51 @@
     </section>
     
     <section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper">
-            <!-- Email contact -->
-            <div class="contact-item">
-                <a href="mailto:verulkar@usc.edu">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>verulkar@usc.edu</span>
-                </a>
-            </div>
-            
-            <!-- LinkedIn link -->
-            <div class="contact-item">
-                <a href="https://linkedin.com/in/aarush-verulkar" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>LinkedIn Profile</span>
-                </a>
-            </div>
-            
-            <!-- GitHub link -->
-            <div class="contact-item">
-                <a href="https://github.com/aarush-verulkar-usc" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub Profile</span>
-                </a>
-            </div>
-            
-            <!-- Google Scholar link -->
-            <div class="contact-item">
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=vehZU50AAAAJ" target="_blank">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Google Scholar</span>
-                </a>
-            </div>
-            
-            <!-- Resume link -->
-            <div class="contact-item">
-                <a href="resume.pdf" target="_blank">
-                    <i class="fa-solid fa-file"></i>
-                    <span>Resume</span>
-                </a>
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <!-- Email contact -->
+                <div class="contact-item">
+                    <a href="mailto:verulkar@usc.edu">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>verulkar@usc.edu</span>
+                    </a>
+                </div>
+                
+                <!-- LinkedIn link -->
+                <div class="contact-item">
+                    <a href="https://linkedin.com/in/aarush-verulkar" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+                
+                <!-- GitHub link -->
+                <div class="contact-item">
+                    <a href="https://github.com/aarush-verulkar-usc" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+                
+                <!-- Google Scholar link -->
+                <div class="contact-item">
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=vehZU50AAAAJ" target="_blank">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Google Scholar</span>
+                    </a>
+                </div>
+                
+                <!-- Resume link -->
+                <div class="contact-item">
+                    <a href="resume.pdf" target="_blank">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Footer -->
     <footer>

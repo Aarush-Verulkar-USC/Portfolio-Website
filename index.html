@@ -35,22 +35,38 @@
             cursor: none;
         }
         
-        /* Custom cursor */
+        /* Custom cursor - UPDATED */
         .cursor {
             position: fixed;
-            width: 30px;
-            height: 30px;
-            border: 2px solid rgba(255, 255, 255, 0.6);
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 
-                0 0 15px rgba(255, 255, 255, 0.4),
-                0 0 30px rgba(255, 255, 255, 0.2),
-                inset 0 0 10px rgba(255, 255, 255, 0.1);
+            border: 1px solid transparent; /* Start with transparent border for smooth transition */
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.1s ease;
-            backdrop-filter: blur(1px);
+            mix-blend-mode: difference; /* Inverts color for visibility */
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        opacity 0.3s, 
+                        background-color 0.2s,
+                        border-color 0.2s; /* Transition border-color */
+        }
+        
+        .cursor.hovered {
+            transform: scale(2.5);
+            background-color: transparent;
+            border-color: #fff;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            background-color: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            mix-blend-mode: difference;
+            will-change: width, height, left, top, opacity;
+            transition: opacity 0.1s; /* Add a slight transition for fading */
         }
         
         /* Screen distortion effect */
@@ -688,6 +704,14 @@
 <body>
     <!-- Custom cursor and distortion effect -->
     <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
     <div class="distortion-layer"></div>
     
     <header>
@@ -1026,22 +1050,28 @@
     </footer>
 
     <script>
-        // Custom cursor with screen distortion effect
+        // Custom cursor with trailing effect
         const cursor = document.querySelector('.cursor');
+        const trails = document.querySelectorAll('.cursor-trail');
         const distortionLayer = document.querySelector('.distortion-layer');
+        const trailCount = trails.length;
+        const speed = 0.25; // Easing speed
+
+        // Store positions. dots[0] is for the main cursor, the rest are for trails.
+        let dots = [];
+        for (let i = 0; i < trailCount + 1; i++) {
+            dots.push({ x: 0, y: 0 });
+        }
+
         let mouseX = 0;
         let mouseY = 0;
 
         // Track mouse movement
-        document.addEventListener('mousemove', (e) => {
+        window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
             
-            // Update cursor position
-            cursor.style.left = mouseX - 15 + 'px';
-            cursor.style.top = mouseY - 15 + 'px';
-            
-            // Update distortion layer
+            // Update distortion layer immediately for responsiveness
             const mouseXPercent = (mouseX / window.innerWidth) * 100;
             const mouseYPercent = (mouseY / window.innerHeight) * 100;
             
@@ -1049,18 +1079,65 @@
             distortionLayer.style.setProperty('--mouse-y', mouseYPercent + '%');
         });
 
+        // Animation loop for smooth cursor movement
+        function animateCursor() {
+            // Target for the first dot is the mouse position
+            let targetX = mouseX;
+            let targetY = mouseY;
+
+            // Update all dot positions with easing
+            dots.forEach((dot, index) => {
+                dot.x += (targetX - dot.x) * speed;
+                dot.y += (targetY - dot.y) * speed;
+                
+                // The next dot will target this dot's new position
+                targetX = dot.x;
+                targetY = dot.y;
+            });
+
+            // Apply positions to the DOM elements
+            // Main cursor
+            cursor.style.left = dots[0].x - 6 + 'px'; // Offset to center
+            cursor.style.top = dots[0].y - 6 + 'px';
+
+            // Trail cursors - UPDATED LOGIC
+            trails.forEach((trail, i) => {
+                const dotIndex = i + 1; // Corresponding dot in the array
+                
+                // Calculate distance from the main cursor
+                const dx = dots[0].x - dots[dotIndex].x;
+                const dy = dots[0].y - dots[dotIndex].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // Set a threshold to hide trails when they are too close.
+                // This is roughly the radius of the hovered cursor.
+                const hideThreshold = 15;
+
+                const baseOpacity = (trailCount - i) / trailCount;
+                const size = 8; // Base size of trail dots
+                const scaledSize = size * baseOpacity;
+
+                trail.style.left = dots[dotIndex].x - (scaledSize / 2) + 'px';
+                trail.style.top = dots[dotIndex].y - (scaledSize / 2) + 'px';
+                trail.style.width = `${scaledSize}px`;
+                trail.style.height = `${scaledSize}px`;
+                
+                // Hide the trail if it's too close to the main cursor, otherwise use scaled opacity.
+                trail.style.opacity = distance < hideThreshold ? 0 : baseOpacity; 
+            });
+
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
         // Enhanced hover effects for interactive elements
         const interactiveElements = document.querySelectorAll('a, button, .project-card, .contact-item, .skill-tag');
         
         interactiveElements.forEach(element => {
             element.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(1.5)';
-                cursor.style.borderColor = 'rgba(255, 255, 255, 0.9)';
-                cursor.style.boxShadow = `
-                    0 0 25px rgba(255, 255, 255, 0.6),
-                    0 0 50px rgba(255, 255, 255, 0.3),
-                    inset 0 0 15px rgba(255, 255, 255, 0.2)
-                `;
+                cursor.classList.add('hovered');
                 
                 // Enhance distortion on hover
                 distortionLayer.style.background = `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
@@ -1070,13 +1147,7 @@
             });
             
             element.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.borderColor = 'rgba(255, 255, 255, 0.6)';
-                cursor.style.boxShadow = `
-                    0 0 15px rgba(255, 255, 255, 0.4),
-                    0 0 30px rgba(255, 255, 255, 0.2),
-                    inset 0 0 10px rgba(255, 255, 255, 0.1)
-                `;
+                cursor.classList.remove('hovered');
                 
                 // Reset distortion
                 distortionLayer.style.background = `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
@@ -1090,11 +1161,13 @@
         document.addEventListener('mouseleave', () => {
             cursor.style.opacity = '0';
             distortionLayer.style.opacity = '0';
+            trails.forEach(trail => trail.style.opacity = '0');
         });
 
         document.addEventListener('mouseenter', () => {
             cursor.style.opacity = '1';
             distortionLayer.style.opacity = '0.8';
+            // Trail opacity is handled by the animation loop
         });
 
         // Smooth scrolling navigation
@@ -1157,3 +1230,4 @@
     </script>
 </body>
 </html>
+

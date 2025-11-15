@@ -32,58 +32,6 @@
             line-height: 1.6;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            cursor: none;
-        }
-        
-        /* Custom cursor - UPDATED */
-        .cursor {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            border: 1px solid transparent; /* Start with transparent border for smooth transition */
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference; /* Inverts color for visibility */
-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                        opacity 0.3s, 
-                        background-color 0.2s,
-                        border-color 0.2s; /* Transition border-color */
-        }
-        
-        .cursor.hovered {
-            transform: scale(2.5);
-            background-color: transparent;
-            border-color: #fff;
-        }
-
-        .cursor-trail {
-            position: fixed;
-            background-color: #fff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            mix-blend-mode: difference;
-            will-change: width, height, left, top, opacity;
-            transition: opacity 0.1s; /* Add a slight transition for fading */
-        }
-        
-        /* Screen distortion effect */
-        .distortion-layer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                rgba(255, 255, 255, 0.02) 0%, 
-                rgba(255, 255, 255, 0.01) 20%, 
-                transparent 40%);
-            filter: blur(0.5px);
-            opacity: 0.8;
         }
         
         /* Header */
@@ -624,14 +572,6 @@
         
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-            body {
-                cursor: auto;
-            }
-            
-            .cursor, .cursor-trail {
-                display: none;
-            }
-            
             .header-content {
                 padding: 0 20px;
             }
@@ -702,18 +642,6 @@
     </style>
 </head>
 <body>
-    <!-- Custom cursor and distortion effect -->
-    <div class="cursor"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="cursor-trail"></div>
-    <div class="distortion-layer"></div>
-    
     <header>
         <div class="header-content">
             <a href="#home" class="logo">Aarush Verulkar</a>
@@ -1076,126 +1004,6 @@
     </footer>
 
     <script>
-        // Custom cursor with trailing effect
-        const cursor = document.querySelector('.cursor');
-        const trails = document.querySelectorAll('.cursor-trail');
-        const distortionLayer = document.querySelector('.distortion-layer');
-        const trailCount = trails.length;
-        const speed = 0.25; // Easing speed
-
-        // Store positions. dots[0] is for the main cursor, the rest are for trails.
-        let dots = [];
-        for (let i = 0; i < trailCount + 1; i++) {
-            dots.push({ x: 0, y: 0 });
-        }
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        // Track mouse movement
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Update distortion layer immediately for responsiveness
-            const mouseXPercent = (mouseX / window.innerWidth) * 100;
-            const mouseYPercent = (mouseY / window.innerHeight) * 100;
-            
-            distortionLayer.style.setProperty('--mouse-x', mouseXPercent + '%');
-            distortionLayer.style.setProperty('--mouse-y', mouseYPercent + '%');
-        });
-
-        // Animation loop for smooth cursor movement
-        function animateCursor() {
-            // Target for the first dot is the mouse position
-            let targetX = mouseX;
-            let targetY = mouseY;
-
-            // Update all dot positions with easing
-            dots.forEach((dot, index) => {
-                dot.x += (targetX - dot.x) * speed;
-                dot.y += (targetY - dot.y) * speed;
-                
-                // The next dot will target this dot's new position
-                targetX = dot.x;
-                targetY = dot.y;
-            });
-
-            // Apply positions to the DOM elements
-            // Main cursor
-            cursor.style.left = dots[0].x - 6 + 'px'; // Offset to center
-            cursor.style.top = dots[0].y - 6 + 'px';
-
-            // Trail cursors - UPDATED LOGIC
-            trails.forEach((trail, i) => {
-                const dotIndex = i + 1; // Corresponding dot in the array
-                
-                // Calculate distance from the main cursor
-                const dx = dots[0].x - dots[dotIndex].x;
-                const dy = dots[0].y - dots[dotIndex].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                // Set a threshold to hide trails when they are too close.
-                // This is roughly the radius of the hovered cursor.
-                const hideThreshold = 15;
-
-                const baseOpacity = (trailCount - i) / trailCount;
-                const size = 8; // Base size of trail dots
-                const scaledSize = size * baseOpacity;
-
-                trail.style.left = dots[dotIndex].x - (scaledSize / 2) + 'px';
-                trail.style.top = dots[dotIndex].y - (scaledSize / 2) + 'px';
-                trail.style.width = `${scaledSize}px`;
-                trail.style.height = `${scaledSize}px`;
-                
-                // Hide the trail if it's too close to the main cursor, otherwise use scaled opacity.
-                trail.style.opacity = distance < hideThreshold ? 0 : baseOpacity; 
-            });
-
-
-            requestAnimationFrame(animateCursor);
-        }
-
-        animateCursor();
-
-        // Enhanced hover effects for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .project-card, .contact-item, .skill-tag');
-        
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.classList.add('hovered');
-                
-                // Enhance distortion on hover
-                distortionLayer.style.background = `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                    rgba(255, 255, 255, 0.04) 0%, 
-                    rgba(255, 255, 255, 0.02) 30%, 
-                    transparent 50%)`;
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hovered');
-                
-                // Reset distortion
-                distortionLayer.style.background = `radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                    rgba(255, 255, 255, 0.02) 0%, 
-                    rgba(255, 255, 255, 0.01) 20%, 
-                    transparent 40%)`;
-            });
-        });
-
-        // Hide cursor when mouse leaves window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            distortionLayer.style.opacity = '0';
-            trails.forEach(trail => trail.style.opacity = '0');
-        });
-
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-            distortionLayer.style.opacity = '0.8';
-            // Trail opacity is handled by the animation loop
-        });
-
         // Smooth scrolling navigation
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('nav ul li a');
@@ -1256,4 +1064,3 @@
     </script>
 </body>
 </html>
-
